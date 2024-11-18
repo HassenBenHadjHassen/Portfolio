@@ -33,7 +33,7 @@ button:focus {
   height: 100%;
   z-index: 999999;
   background-color: #0c0513;
-  background-image: url(./pre.svg);
+  background-image: url(/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
