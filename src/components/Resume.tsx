@@ -5,8 +5,9 @@ import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "./Particle";
 import { pdfjs } from "react-pdf";
 import PdfComp from "./PdfComp";
+
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
+  "/pdf.worker.min.mjs",
   import.meta.url
 ).toString();
 
