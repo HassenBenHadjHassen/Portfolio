@@ -3,7 +3,12 @@ import Button from "react-bootstrap/Button";
 import pdf from "../assets/Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "./Particle";
-import { EmbedPDF } from "@simplepdf/react-embed-pdf";
+import { pdfjs } from "react-pdf";
+import PdfComp from "./PdfComp";
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 function Resume() {
   return (
@@ -24,13 +29,7 @@ function Resume() {
 
         <Row className="resume">
           <div className="d-flex justify-content-center">
-            <EmbedPDF
-              mode="inline"
-              style={{ width: 900, height: 800 }}
-              documentURL={
-                "https://drive.google.com/uc?export=download&id=1YOkdHAPR3PAPf9KRcvYfcicN9xLJkkPe"
-              }
-            />
+            <PdfComp pdfFile={pdf} />
           </div>
         </Row>
 
