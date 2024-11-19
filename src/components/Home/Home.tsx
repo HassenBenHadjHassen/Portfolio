@@ -1,7 +1,11 @@
+import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Home2 from "./Home2";
 import Type from "./Type";
 import Particle from "../Particle";
+import HomeImage from "../../assets/home-main.svg";
+import FallBack from "../FallBack";
+
+const Home2 = React.lazy(() => import("./Home2"));
 
 function Home() {
   return (
@@ -30,7 +34,7 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
-                src={"/home-main.svg"}
+                src={HomeImage}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
@@ -39,7 +43,9 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Home2 />
+      <Suspense fallback={<FallBack />}>
+        <Home2 />
+      </Suspense>
     </section>
   );
 }

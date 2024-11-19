@@ -1,9 +1,13 @@
+import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 import AboutCard from "./AboutCard";
+import AboutImage from "../../assets/about.png";
+import FallBack from "../FallBack";
+
+const GitHub = React.lazy(() => import("./Github"));
 
 function About() {
   return (
@@ -29,7 +33,7 @@ function About() {
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={"/about.png"} alt="about" className="img-fluid" />
+            <img src={AboutImage} alt="about" className="img-fluid" />
           </Col>
         </Row>
         <h1 className="project-heading">
@@ -43,7 +47,9 @@ function About() {
         </h1>
         <Toolstack />
 
-        <Github />
+        <Suspense fallback={<FallBack />}>
+          <GitHub />
+        </Suspense>
       </Container>
     </Container>
   );

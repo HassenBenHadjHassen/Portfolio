@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import Avatar from "../../assets/avatar.svg";
 
 function Home2() {
   return (
@@ -35,7 +36,7 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={"/avatar.svg"} className="img-fluid" alt="avatar" />
+              <img src={Avatar} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
         </Row>

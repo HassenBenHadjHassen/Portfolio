@@ -33,7 +33,7 @@ button:focus {
   height: 100%;
   z-index: 999999;
   background-color: #0c0513;
-  background-image: url(/pre.svg);
+  background-image: url("assets/pre.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -45,6 +45,15 @@ button:focus {
 #no-scroll {
   overflow: hidden;
   height: 100vh;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* --------- */
@@ -257,7 +266,7 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(/home-bg.jpg);
+  background-image: var(--image-gradient), url("assets/home-bg.jpg");
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
