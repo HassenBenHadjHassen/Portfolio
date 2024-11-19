@@ -2,12 +2,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import ProjectCard from "./ProjectCard";
 
-import GPI from "../../Assets/Projects/gpi.png";
-import Bazaar from "../../Assets/Projects/bazaar.png";
-import DoctorWho2048 from "../../Assets/Projects/doctor-who-2048.png";
-import Packease from "../../Assets/Projects/packease.png";
-import SecureChatApp from "../../Assets/Projects/secure-chat-app.png";
-import SmothScrollReact from "../../Assets/Projects/smooth-scroll-react.png";
+import GPI from "../../assets/Projects/gpi.png";
+import Bazaar from "../../assets/Projects/bazaar.png";
+import DoctorWho2048 from "../../assets/Projects/doctor-who-2048.png";
+import Packease from "../../assets/Projects/packease.png";
+import SecureChatApp from "../../assets/Projects/secure-chat-app.png";
+import SmothScrollReact from "../../assets/Projects/smooth-scroll-react.png";
 
 import { v4 as uuidv4 } from "uuid";
 
