@@ -22,16 +22,30 @@ function App() {
 
   useEffect(() => {
     const handleLoad = () => {
+      console.log("Page loaded");
       updateLoad(false);
     };
 
-    window.addEventListener("load", handleLoad);
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
 
+    // Fail-safe to set load to false after 1.5 seconds
+    const timeout = setTimeout(() => {
+      if (load) {
+        console.log("Load timed out, setting to false");
+        updateLoad(false);
+      }
+    }, 1500);
+
+    // Cleanup the event listener and timeout
     return () => {
       window.removeEventListener("load", handleLoad);
+      clearTimeout(timeout);
     };
-  }, []);
-
+  }, [load]);
   return (
     <Router>
       <Preloader load={load} />
