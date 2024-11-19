@@ -5,6 +5,7 @@ import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "./Particle";
 import { pdfjs } from "react-pdf";
 import PdfComp from "./PdfComp";
+import { useEffect, useState } from "react";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "/pdf.worker.min.mjs",
@@ -12,37 +13,50 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 function Resume() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
-    <div>
+    <div className="resume-page">
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row className="download-button-row">
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            className="download-cv-btn"
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            <span className="ms-2">Download CV</span>
           </Button>
         </Row>
 
-        <Row className="resume">
-          <div className="d-flex justify-content-center">
-            <PdfComp pdfFile={pdf} />
+        <Row className="pdf-viewer-row">
+          <div className="pdf-container">
+            <PdfComp pdfFile={pdf} isMobile={isMobile} />
           </div>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row className="download-button-row mt-4">
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            className="download-cv-btn"
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            <span className="ms-2">Download CV</span>
           </Button>
         </Row>
       </Container>

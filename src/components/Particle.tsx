@@ -3,7 +3,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { Engine, ISourceOptions } from "@tsparticles/engine";
 
-const App = () => {
+const Particle = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -75,4 +75,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Particle;

@@ -598,6 +598,7 @@ button:focus {
     padding-top: 0 !important;
   }
 }
+
 /* --------- */
 /* Resume */
 /* --------- */
@@ -629,7 +630,25 @@ button:focus {
   height: auto;
 }
 
+.pdf-container {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.pdf-file {
+  margin-top: 10px;
+}
+
 @media (max-width: 767px) {
+  .resume-section {
+    padding: 20px 15px;
+  }
+
+  .pdf-container {
+    width: 100%;
+  }
+
   .resume-left {
     padding-right: 15px !important;
     padding-left: 15px !important;
@@ -688,6 +707,89 @@ button:focus {
   top: 0;
   background: #fff;
   border: 2px solid #8a49a8;
+}
+
+.resume-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.download-button-row {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  width: 42.5%;
+}
+
+.resume-section {
+  padding: 110px 20px 30px;
+}
+
+.pdf-viewer-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pdf-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pdf-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pdf-page {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-indicator {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.download-button-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.download-cv-btn {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 80px 15px 20px;
+  }
+
+  .pdf-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .pdf-page {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 60px 10px 15px;
+  }
 }
 
 .like-item {
