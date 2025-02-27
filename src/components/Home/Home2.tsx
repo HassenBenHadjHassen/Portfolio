@@ -2,7 +2,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 import Avatar from "../../assets/avatar.svg";
+import Contact from "./Contact";
 
 function Home2() {
   return (
@@ -14,7 +16,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              👋 Hi, I’m Hassen Ben Hadj Hassen, a software developer with 2
+              👋 Hi, I'm Hassen Ben Hadj Hassen, a software developer with 2
               years of experience building web applications using{" "}
               <b className="purple">ReactJS, NodeJS, and TypeScript</b>.
               <br />
@@ -22,7 +24,7 @@ function Home2() {
               with modern technologies.
               <br />
               <br />
-              🚀 I’ve built projects like{" "}
+              🚀 I've built projects like{" "}
               <b className="purple">
                 GPI, Secure Chat App, and Bazaar Insights
               </b>
@@ -67,9 +69,20 @@ function Home2() {
                   <FaLinkedinIn />
                 </a>
               </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:hassenbenhadjhassen@gmail.com?subject=Hello%20Hassen"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <CiMail />
+                </a>
+              </li>
             </ul>
           </Col>
         </Row>
+        <Contact />
       </Container>
     </Container>
   );

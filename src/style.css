@@ -328,13 +328,11 @@ button:focus {
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
 }
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
+  padding-top: 50px !important;
   padding-bottom: 20px !important;
   text-align: center;
 }
@@ -862,4 +860,27 @@ button:focus {
 
 .rpv-core__viewer {
   width: 100% !important;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  box-shadow: 0 0 5px rgba(200, 137, 230, 0.637);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }

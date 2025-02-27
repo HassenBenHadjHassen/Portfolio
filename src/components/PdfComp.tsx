@@ -17,7 +17,7 @@ function PdfComp({ workerUrl, pdfFile, isMobile }: PdfCompProps) {
         {pdfFile && (
           <Viewer 
             fileUrl={pdfFile} 
-            defaultScale={!isMobile ? 1 : 0.6}
+            defaultScale={!isMobile ? 1 : 0.489}
           />
         )}
       </Worker>
