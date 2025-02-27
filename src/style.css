@@ -646,7 +646,11 @@ button:focus {
 }
 
 .pdf-file {
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 @media (max-width: 767px) {
@@ -737,26 +741,24 @@ button:focus {
 .pdf-viewer-row {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   margin: 20px 0;
 }
 
 .pdf-container {
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-.pdf-file {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.pdf-page {
+  /* max-width: 100%; */
+  height: auto;
 }
 
-.pdf-page {
-  max-width: 100%;
-  height: auto;
+.rpv-core__inner-page {
+  width: 100% !important;
 }
 
 .page-indicator {
@@ -856,4 +858,8 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+.rpv-core__viewer {
+  width: 100% !important;
 }

@@ -1,37 +1,26 @@
-import { useState } from "react";
-import { Document, Page } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import { Viewer, Worker } from "@react-pdf-viewer/core"
+import "@react-pdf-viewer/core/lib/styles/index.css"
 
 interface PdfCompProps {
+  workerUrl: string;
   pdfFile: string;
   isMobile: boolean;
 }
 
-function PdfComp({ pdfFile, isMobile }: PdfCompProps) {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber] = useState<number>(1);
+function PdfComp({ workerUrl, pdfFile, isMobile }: PdfCompProps) {
 
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setNumPages(numPages);
-  }
+
 
   return (
     <div className="pdf-file">
-      <Document
-        file={pdfFile}
-        onLoadSuccess={onDocumentLoadSuccess}
-        onLoadError={console.error}
-      >
-        <Page
-          pageNumber={pageNumber}
-          scale={isMobile ? 0.6 : 1}
-          className="pdf-page"
-        />
-      </Document>
-      <p className="page-indicator">
-        Page {pageNumber} of {numPages}
-      </p>
+      <Worker workerUrl={workerUrl}>
+        {pdfFile && (
+          <Viewer 
+            fileUrl={pdfFile} 
+            defaultScale={!isMobile ? 1 : 0.6}
+          />
+        )}
+      </Worker>
     </div>
   );
 }

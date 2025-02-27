@@ -1,16 +1,15 @@
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import pdf from "../assets/Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "./Particle";
-import { pdfjs } from "react-pdf";
 import PdfComp from "./PdfComp";
 import { useEffect, useState } from "react";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+
+import pdf from "../assets/Resume.pdf"
+
+
+const workerUrl = `https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`
 
 function Resume() {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,9 +41,9 @@ function Resume() {
           </Button>
         </Row>
 
-        <Row className="pdf-viewer-row">
-          <div className="pdf-container">
-            <PdfComp pdfFile={pdf} isMobile={isMobile} />
+        <Row style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+          <div style={{ width: '100%', maxWidth: '1000px' }}>
+            <PdfComp pdfFile={pdf} isMobile={isMobile} workerUrl={workerUrl}/>
           </div>
         </Row>
 
