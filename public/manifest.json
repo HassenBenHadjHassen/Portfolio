@@ -1,5 +1,12 @@
 {
- "name": "App",
+ "name": "Hassen Ben Hadj Hassen - Full Stack Developer Portfolio",
+ "short_name": "Hassen Portfolio",
+ "description": "Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio of client projects and personal applications.",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#6c63ff",
+ "orientation": "portrait-primary",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

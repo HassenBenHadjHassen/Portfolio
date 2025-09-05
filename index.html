@@ -1,106 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-icon-192x192.png"
-    />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="https://hassenbenhadjhassen.com/" />
-    <link rel="preload" as="image" href="/portfolio.png" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
-    />
-    <meta name="author" content="Hassen Ben Hadj Hassen">
-    <meta property="article:published_time" content="2025-04-12T00:00:00Z" />
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="/android-icon-192x192.png"
+		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="canonical" href="https://hassenbenhadjhassen.com/" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
+		/>
+		<meta name="author" content="Hassen Ben Hadj Hassen" />
+		<meta property="article:published_time" content="2025-04-12T00:00:00Z" />
 
-    <title>Hassen Ben Hadj Hassen | Portfolio</title>
+		<title>Hassen Ben Hadj Hassen | Portfolio</title>
 
-    <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="Hassen Ben Hadj Hassen | Portfolio" />
-    <meta
-      itemprop="description"
-      content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
-    />
-    <meta itemprop="image" content="https://hassenbenhadjhassen.com/portfolio.png" />
+		<!-- Google / Search Engine Tags -->
+		<meta itemprop="name" content="Hassen Ben Hadj Hassen | Portfolio" />
+		<meta
+			itemprop="description"
+			content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
+		/>
+		<meta
+			itemprop="image"
+			content="https://hassenbenhadjhassen.com/portfolio.png"
+		/>
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://hassenbenhadjhassen.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hassen Ben Hadj Hassen | Portfolio" />
-    <meta
-      property="og:description"
-      content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
-    />
-    <meta property="og:image" content="https://hassenbenhadjhassen.com/portfolio.png" />
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://hassenbenhadjhassen.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Hassen Ben Hadj Hassen | Portfolio" />
+		<meta
+			property="og:description"
+			content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
+		/>
+		<meta
+			property="og:image"
+			content="https://hassenbenhadjhassen.com/portfolio.png"
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta
+			property="og:image:alt"
+			content="Hassen Ben Hadj Hassen - Full Stack Developer Portfolio"
+		/>
+		<meta property="og:site_name" content="Hassen Ben Hadj Hassen Portfolio" />
+		<meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hassen Ben Hadj Hassen | Portfolio" />
-    <meta
-      name="twitter:description"
-      content="A fully self-developed personal website built using React.js, designed to showcase my projects, skills, and experience as a software developer. The site features a modern, responsive UI, dynamic routing with React Router, and reusable components for scalability. It serves as both a technical demonstration of my front-end capabilities and a personal branding platform."
-    />
-    <meta name="twitter:image" content="https://hassenbenhadjhassen.com/portfolio.png" />
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Hassen Ben Hadj Hassen | Portfolio",
-        "url": "https://hassenbenhadjhassen.com",
-        "author": {
-          "@type": "Person",
-          "name": "Hassen Ben Hadj Hassen"
-        },
-        "datePublished": "2025-04-12",
-        "description": "A fully self-developed personal website built using React.js to showcase projects, skills, and experience as a software developer."
-      }
-      
-      </script>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@hassenbenhadj" />
+		<meta name="twitter:creator" content="@hassenbenhadj" />
+		<meta
+			name="twitter:title"
+			content="Hassen Ben Hadj Hassen | Full Stack Developer Portfolio"
+		/>
+		<meta
+			name="twitter:description"
+			content="Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio of client projects and personal applications."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://hassenbenhadjhassen.com/portfolio.png"
+		/>
+		<meta
+			name="twitter:image:alt"
+			content="Hassen Ben Hadj Hassen - Full Stack Developer Portfolio"
+		/>
+
+		<!-- Additional SEO Meta Tags -->
+		<meta
+			name="keywords"
+			content="full stack developer, react developer, node.js developer, web developer, portfolio, javascript, typescript, frontend developer, backend developer, software engineer, hassen ben hadj hassen"
+		/>
+		<meta
+			name="robots"
+			content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+		/>
+		<meta name="googlebot" content="index, follow" />
+		<meta name="bingbot" content="index, follow" />
+		<meta name="language" content="English" />
+		<meta name="revisit-after" content="7 days" />
+		<meta name="rating" content="General" />
+		<meta name="distribution" content="Global" />
+		<meta name="coverage" content="Worldwide" />
+		<meta name="target" content="all" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="format-detection" content="telephone=no" />
+
+		<!-- Preload critical resources -->
+		<link rel="preload" href="/src/main.tsx" as="script" />
+		<link rel="preload" href="/portfolio.png" as="image" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+			as="style"
+		/>
+
+		<!-- DNS Prefetch for external resources -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+		<link rel="dns-prefetch" href="//unpkg.com" />
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Hassen Ben Hadj Hassen",
+				"url": "https://hassenbenhadjhassen.com",
+				"image": "https://hassenbenhadjhassen.com/portfolio.png",
+				"description": "Full Stack Developer specializing in React, Node.js, and modern web technologies. Experienced in building scalable web applications and client projects.",
+				"jobTitle": "Full Stack Developer",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Freelance"
+				},
+				"knowsAbout": [
+					"React.js",
+					"Node.js",
+					"JavaScript",
+					"TypeScript",
+					"Web Development",
+					"Frontend Development",
+					"Backend Development",
+					"Full Stack Development"
+				],
+				"sameAs": [
+					"https://github.com/HassenBenHadjHassen",
+					"https://www.linkedin.com/in/hassen-ben-hadj-hassen"
+				],
+				"hasOccupation": {
+					"@type": "Occupation",
+					"name": "Software Developer",
+					"description": "Full Stack Developer creating modern web applications"
+				}
+			}
+		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "Hassen Ben Hadj Hassen | Portfolio",
+				"url": "https://hassenbenhadjhassen.com",
+				"author": {
+					"@type": "Person",
+					"name": "Hassen Ben Hadj Hassen"
+				},
+				"datePublished": "2025-04-12",
+				"description": "Full Stack Developer portfolio showcasing React, Node.js projects and client work.",
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://hassenbenhadjhassen.com/?q={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
 </html>

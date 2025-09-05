@@ -1,24 +1,24 @@
 import Typewriter from "typewriter-effect";
+import { useTranslation } from "react-i18next";
 
 function Type() {
-  return (
-    <Typewriter
-      options={{
-        strings: [
-          "Full-Stack Developer",
-          "MERN Stack Developer",
-          "SAAS Developer",
-          "API Developer",
-          "Database Designer",
-          "Software Developer",
-          "Freelancer",
-        ],
-        autoStart: true,
-        loop: true,
-        deleteSpeed: 50,
-      }}
-    />
-  );
+	const { t } = useTranslation();
+
+	return (
+		<Typewriter
+			options={{
+				strings: [
+					t("home.typewriter.line1"),
+					t("home.typewriter.line2"),
+					t("home.typewriter.line3"),
+					t("home.typewriter.line4"),
+				],
+				autoStart: true,
+				loop: true,
+				deleteSpeed: 50,
+			}}
+		/>
+	);
 }
 
 export default Type;

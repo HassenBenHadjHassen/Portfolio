@@ -1,0 +1,100 @@
+{
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"resume": "Resume"
+	},
+	"home": {
+		"greeting": "Hi There!",
+		"name": "I'M",
+		"fullName": "HASSEN BEN HADJ HASSEN",
+		"typewriter": {
+			"line1": "React & Node.js Specialist",
+			"line2": "TypeScript Developer",
+			"line3": "E-commerce Solutions",
+			"line4": "Client Project Expert"
+		},
+		"introduction": {
+			"title": "LET ME INTRODUCE MYSELF",
+			"description": {
+				"intro": "👋 Hi, I'm Hassen Ben Hadj Hassen, a Full Stack Developer with experience building modern web applications using React, Node.js, and TypeScript.",
+				"specialization": "⚡ I specialize in creating scalable, user-friendly applications with modern technologies and have worked on both client projects and personal solutions.",
+				"projects": "🚀 I've built projects like GPI (Police Global Indicators), CardioPro, and Packease.shop, using tools like React, Node.js, MongoDB, Stripe and TypeScript.",
+				"mission": "💡 I bring ideas to life with React for frontend and Node.js for backend, creating end-to-end solutions that deliver real value."
+			},
+			"findMe": "FIND ME ON",
+			"connect": "Feel free to connect with me"
+		}
+	},
+	"about": {
+		"title": "About me",
+		"description": "I am a passionate Full Stack Developer with expertise in modern web technologies.",
+		"skills": "Skills",
+		"technologies": "Technologies",
+		"skillset": "Professional Skillset",
+		"personalDescription": "Hi, I'm Hassen Ben Hadj Hassen, a passionate software developer with 3+ years of experience specializing in modern web technologies. I excel at building scalable, high-performance applications using React, Node.js, and cloud technologies. My expertise spans full-stack development, with a focus on creating intuitive user experiences and robust backend systems. I'm committed to writing clean, maintainable code and staying current with industry best practices. When I'm not coding, I enjoy:",
+		"activities": {
+			"exploring": "Exploring cutting-edge technologies and frameworks",
+			"contributing": "Contributing to open-source projects and developer communities",
+			"collaborating": "Collaborating on innovative projects with fellow developers",
+			"learning": "Continuous learning and staying ahead of tech trends"
+		}
+	},
+	"projects": {
+		"title": "Professional Portfolio",
+		"description": "Full Stack Developer Portfolio: A showcase of projects, online stores, and dynamic web applications—ranging from large-scale enterprise solutions to custom-built experiences.",
+		"viewProject": "View Project",
+		"viewCode": "View Code",
+		"clientProjects": "Client Projects",
+		"personalProjects": "Personal Projects"
+	},
+	"contact": {
+		"title": "GET IN TOUCH",
+		"form": {
+			"name": "Your Name",
+			"email": "Your Email",
+			"message": "Your Message",
+			"sendButton": "Send Message",
+			"sendingButton": "Sending...",
+			"clearButton": "Clear Form",
+			"helpText": "Click 'Send Message' to submit your contact form",
+			"sendingText": "Please wait while we send your message...",
+			"successMessage": "Thank you for your message! I'll get back to you as soon as possible.",
+			"errors": {
+				"nameRequired": "Name is required",
+				"nameMinLength": "Name must be at least 2 characters long",
+				"nameMaxLength": "Name must be less than 50 characters",
+				"emailRequired": "Email is required",
+				"emailInvalid": "Please enter a valid email address",
+				"messageRequired": "Message is required",
+				"messageMinLength": "Message must be at least 10 characters long",
+				"messageMaxLength": "Message must be less than 1000 characters",
+				"rateLimit": "Please wait 60 seconds before submitting another message",
+				"recaptchaError": "reCAPTCHA is not available. Please refresh the page and try again.",
+				"tooManyRequests": "Too many requests. Please try again later.",
+				"serverError": "Server error. Please try again later.",
+				"invalidData": "Invalid form data. Please check your inputs and try again.",
+				"sendError": "Failed to send message. Please try again.",
+				"unexpectedError": "An unexpected error occurred"
+			}
+		}
+	},
+	"resume": {
+		"title": "Resume & CV - Hassen Ben Hadj Hassen | Full Stack Developer",
+		"download": "Download CV"
+	},
+	"footer": {
+		"developedBy": "Developed by Hassen Ben Hadj Hassen",
+		"copyright": "Copyright © {year} Hassen Ben Hadj Hassen",
+		"rights": "All rights reserved.",
+		"madeWith": "Made with",
+		"by": "by"
+	},
+	"common": {
+		"loading": "Loading...",
+		"error": "Error",
+		"retry": "Retry",
+		"success": "Success!"
+	}
+}

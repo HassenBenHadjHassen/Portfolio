@@ -1,0 +1,100 @@
+{
+	"navigation": {
+		"home": "Accueil",
+		"about": "À propos",
+		"projects": "Projets",
+		"resume": "CV"
+	},
+	"home": {
+		"greeting": "Salut !",
+		"name": "JE SUIS",
+		"fullName": "HASSEN BEN HADJ HASSEN",
+		"typewriter": {
+			"line1": "Spécialiste React & Node.js",
+			"line2": "Développeur TypeScript",
+			"line3": "Solutions E-commerce",
+			"line4": "Expert Projets Clients"
+		},
+		"introduction": {
+			"title": "LAISSEZ-MOI ME PRÉSENTER",
+			"description": {
+				"intro": "👋 Salut, je suis Hassen Ben Hadj Hassen, un Développeur Full Stack avec de l'expérience dans la création d'applications web modernes utilisant React, Node.js, et TypeScript.",
+				"specialization": "⚡ Je me spécialise dans la création d'applications évolutives et conviviales avec des technologies modernes et j'ai travaillé sur des projets clients et des solutions personnelles.",
+				"projects": "🚀 J'ai construit des projets comme GPI (Indicateurs Globaux de Police), CardioPro, et Packease.shop, en utilisant des outils comme React, Node.js, MongoDB, Stripe et TypeScript.",
+				"mission": "💡 Je donne vie aux idées avec React pour le frontend et Node.js pour le backend, créant des solutions de bout en bout qui apportent une vraie valeur."
+			},
+			"findMe": "TROUVEZ-MOI SUR",
+			"connect": "N'hésitez pas à me contacter"
+		}
+	},
+	"about": {
+		"title": "À propos de moi",
+		"description": "Je suis un développeur Full Stack passionné avec une expertise dans les technologies web modernes.",
+		"skills": "Compétences",
+		"technologies": "Technologies",
+		"skillset": "Compétences Professionnelles",
+		"personalDescription": "Salut, je suis Hassen Ben Hadj Hassen, un développeur de logiciels passionné avec plus de 3 ans d'expérience spécialisé dans les technologies web modernes. J'excelle dans la création d'applications évolutives et performantes utilisant React, Node.js, et les technologies cloud. Mon expertise couvre le développement full-stack, avec un focus sur la création d'expériences utilisateur intuitives et de systèmes backend robustes. Je m'engage à écrire du code propre et maintenable et à rester à jour avec les meilleures pratiques de l'industrie. Quand je ne code pas, j'aime :",
+		"activities": {
+			"exploring": "Explorer des technologies de pointe et des frameworks",
+			"contributing": "Contribuer à des projets open-source et aux communautés de développeurs",
+			"collaborating": "Collaborer sur des projets innovants avec d'autres développeurs",
+			"learning": "Apprentissage continu et rester à la pointe des tendances tech"
+		}
+	},
+	"projects": {
+		"title": "Portfolio Professionnel",
+		"description": "Portfolio Développeur Full Stack : Une vitrine de projets, boutiques en ligne et applications web dynamiques, allant de solutions d’entreprise à grande échelle à des expériences sur mesure.",
+		"viewProject": "Voir le projet",
+		"viewCode": "Voir le code",
+		"clientProjects": "Projets Clients",
+		"personalProjects": "Projets Personnels"
+	},
+	"contact": {
+		"title": "ENTRER EN CONTACT",
+		"form": {
+			"name": "Votre Nom",
+			"email": "Votre Email",
+			"message": "Votre Message",
+			"sendButton": "Envoyer le Message",
+			"sendingButton": "Envoi en cours...",
+			"clearButton": "Effacer le Formulaire",
+			"helpText": "Cliquez sur 'Envoyer le Message' pour soumettre votre formulaire de contact",
+			"sendingText": "Veuillez patienter pendant que nous envoyons votre message...",
+			"successMessage": "Merci pour votre message ! Je vous répondrai dès que possible.",
+			"errors": {
+				"nameRequired": "Le nom est requis",
+				"nameMinLength": "Le nom doit contenir au moins 2 caractères",
+				"nameMaxLength": "Le nom doit contenir moins de 50 caractères",
+				"emailRequired": "L'email est requis",
+				"emailInvalid": "Veuillez entrer une adresse email valide",
+				"messageRequired": "Le message est requis",
+				"messageMinLength": "Le message doit contenir au moins 10 caractères",
+				"messageMaxLength": "Le message doit contenir moins de 1000 caractères",
+				"rateLimit": "Veuillez attendre 60 secondes avant de soumettre un autre message",
+				"recaptchaError": "reCAPTCHA n'est pas disponible. Veuillez actualiser la page et réessayer.",
+				"tooManyRequests": "Trop de requêtes. Veuillez réessayer plus tard.",
+				"serverError": "Erreur serveur. Veuillez réessayer plus tard.",
+				"invalidData": "Données de formulaire invalides. Veuillez vérifier vos entrées et réessayer.",
+				"sendError": "Échec de l'envoi du message. Veuillez réessayer.",
+				"unexpectedError": "Une erreur inattendue s'est produite"
+			}
+		}
+	},
+	"resume": {
+		"title": "CV - Hassen Ben Hadj Hassen | Développeur Full Stack",
+		"download": "Télécharger le CV"
+	},
+	"footer": {
+		"developedBy": "Développé par Hassen Ben Hadj Hassen",
+		"copyright": "Copyright © {year} Hassen Ben Hadj Hassen",
+		"rights": "Tous droits réservés.",
+		"madeWith": "Fait avec",
+		"by": "par"
+	},
+	"common": {
+		"loading": "Chargement...",
+		"error": "Erreur",
+		"retry": "Réessayer",
+		"success": "Succès !"
+	}
+}

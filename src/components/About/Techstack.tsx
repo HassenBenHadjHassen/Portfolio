@@ -1,91 +1,134 @@
 import { Col, Row } from "react-bootstrap";
 import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
-  DiPython,
-  DiGit,
+	DiJavascript1,
+	DiReact,
+	DiNodejs,
+	DiMongodb,
 } from "react-icons/di";
 import {
-  SiTypescript,
-  SiFirebase,
-  SiDocker,
-  SiSocketdotio,
-  SiRedux,
-  SiKotlin,
-  SiNextdotjs,
-  SiNginx,
-  SiPrisma,
+	SiTypescript,
+	SiFirebase,
+	SiRedux,
+	SiPrisma,
+	SiTailwindcss,
+	SiVite,
+	SiFramer,
+	SiRadixui,
+	SiShadcnui,
+
 } from "react-icons/si";
-import { FaAws, FaBootstrap, FaWordpress } from "react-icons/fa";
 
 function Techstack() {
-  return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {/* Frontend Technologies */}
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTypescript />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedux />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaWordpress />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaBootstrap />
-      </Col>
+	return (
+		<div>
+			<Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
+				{/* Core Frontend Technologies */}
+				<Col xs={4} md={2} className="tech-icons">
+					<DiJavascript1 />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiTypescript />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<DiReact />
+				</Col>
+			</Row>
 
-      {/* Backend Technologies */}
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSocketdotio />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaAws />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPrisma />
-      </Col>
+			{/* Separator */}
+			<hr
+				style={{
+					border: "none",
+					height: "2px",
+					background:
+						"linear-gradient(90deg, transparent, #8b5cf6, transparent)",
+					margin: "20px auto",
+					width: "60%",
+				}}
+			/>
 
-      {/* DevOps & Tools */}
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDocker />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNginx />
-      </Col>
+			<Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
+				{/* Styling & UI Libraries */}
+				<Col xs={4} md={2} className="tech-icons">
+					<SiTailwindcss />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiShadcnui />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiRadixui />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiFramer />
+				</Col>
+			</Row>
 
-      {/* Miscellaneous Technologies */}
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiKotlin />
-      </Col>
-    </Row>
-  );
+			{/* Separator */}
+			<hr
+				style={{
+					border: "none",
+					height: "2px",
+					background:
+						"linear-gradient(90deg, transparent, #8b5cf6, transparent)",
+					margin: "20px auto",
+					width: "60%",
+				}}
+			/>
+
+			<Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
+				{/* Build Tools & Development */}
+				<Col xs={4} md={2} className="tech-icons">
+					<SiVite />
+				</Col>
+			</Row>
+
+			{/* Separator */}
+			<hr
+				style={{
+					border: "none",
+					height: "2px",
+					background:
+						"linear-gradient(90deg, transparent, #8b5cf6, transparent)",
+					margin: "20px auto",
+					width: "60%",
+				}}
+			/>
+
+			<Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
+				{/* Backend & Database */}
+				<Col xs={4} md={2} className="tech-icons">
+					<DiNodejs />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<DiMongodb />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiPrisma />
+				</Col>
+			</Row>
+
+			{/* Separator */}
+			<hr
+				style={{
+					border: "none",
+					height: "2px",
+					background:
+						"linear-gradient(90deg, transparent, #8b5cf6, transparent)",
+					margin: "20px auto",
+					width: "60%",
+				}}
+			/>
+
+			<Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+				{/* State Management & Libraries */}
+				<Col xs={4} md={2} className="tech-icons">
+					<SiRedux />
+				</Col>
+				<Col xs={4} md={2} className="tech-icons">
+					<SiFirebase />
+				</Col>
+			</Row>
+		</div>
+	);
 }
 
 export default Techstack;
