@@ -153,77 +153,83 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Hassen Ben Hadj Hassen",
-				"url": "https://hassenbenhadjhassen.com",
-				"image": "https://hassenbenhadjhassen.com/portfolio.png",
-				"description": "Full Stack Developer specializing in React, Node.js, and modern web technologies. Experienced in building scalable web applications and client projects.",
-				"jobTitle": "Full Stack Developer",
-				"worksFor": {
-					"@type": "Organization",
-					"name": "Freelance"
-				},
-				"knowsAbout": [
-					"React.js",
-					"Node.js",
-					"JavaScript",
-					"TypeScript",
-					"Web Development",
-					"Frontend Development",
-					"Backend Development",
-					"Full Stack Development"
-				],
-				"sameAs": [
-					"https://github.com/HassenBenHadjHassen",
-					"https://www.linkedin.com/in/hassen-ben-hadj-hassen"
-				],
-				"hasOccupation": {
-					"@type": "Occupation",
-					"name": "Software Developer",
-					"description": "Full Stack Developer creating modern web applications",
-					"estimatedSalary": {
-						"@type": "MonetaryAmount",
-						"currency": "USD",
-						"value": {
-							"@type": "QuantitativeValue",
-							"minValue": 50000,
-							"maxValue": 120000
+				"@graph": [
+					{
+						"@type": "Person",
+						"name": "Hassen Ben Hadj Hassen",
+						"url": "https://hassenbenhadjhassen.com",
+						"image": "https://hassenbenhadjhassen.com/portfolio.png",
+						"sameAs": [
+							"https://github.com/HassenBenHadjHassen",
+							"https://www.linkedin.com/in/hassenbenhadjhassen/"
+						],
+						"jobTitle": "Full Stack Developer",
+						"worksFor": {
+							"@type": "Organization",
+							"name": "Freelance"
+						},
+						"alumniOf": {
+							"@type": "EducationalOrganization",
+							"name": "Your University/School Name"
+						},
+						"hasCredential": [
+							{
+								"@type": "EducationalOccupationalCredential",
+								"credentialCategory": "Certification",
+								"name": "Your Certification Name"
+							}
+						],
+						"knowsAbout": [
+							"Web Development",
+							"Full Stack Development",
+							"Frontend Development",
+							"Backend Development",
+							"JavaScript",
+							"TypeScript"
+						],
+						"description": "Full Stack Developer specializing in building scalable web applications and client projects. Skilled in React, Node.js, and modern web technologies.",
+						"mainEntityOfPage": {
+							"@type": "WebPage",
+							"@id": "https://hassenbenhadjhassen.com"
 						}
 					},
-					"occupationLocation": {
-						"@type": "Place",
-						"name": "Remote / Tunisia",
-						"address": {
-							"@type": "PostalAddress",
-							"addressCountry": "TN"
+					{
+						"@type": "WebSite",
+						"name": "Hassen Ben Hadj Hassen | Portfolio",
+						"url": "https://hassenbenhadjhassen.com",
+						"author": {
+							"@type": "Person",
+							"name": "Hassen Ben Hadj Hassen"
+						},
+						"description": "Full Stack Developer portfolio showcasing projects and client work.",
+						"potentialAction": {
+							"@type": "SearchAction",
+							"target": "https://hassenbenhadjhassen.com/?q={search_term_string}",
+							"query-input": "required name=search_term_string"
 						}
+					},
+					{
+						"@type": "SoftwareApplication",
+						"name": "Portfolio Projects",
+						"url": "https://hassenbenhadjhassen.com/projects",
+						"applicationCategory": "WebApplication",
+						"operatingSystem": "Web",
+						"offers": {
+							"@type": "Offer",
+							"price": "0",
+							"priceCurrency": "USD",
+							"url": "https://hassenbenhadjhassen.com/projects"
+						},
+						"author": {
+							"@type": "Person",
+							"name": "Hassen Ben Hadj Hassen"
+						},
+						"description": "Collection of full stack web development projects including React and Node.js applications."
 					}
-				},
-				"mainEntityOfPage": {
-					"@type": "WebPage",
-					"@id": "https://hassenbenhadjhassen.com"
-				}
+				]
 			}
 		</script>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "Hassen Ben Hadj Hassen | Portfolio",
-				"url": "https://hassenbenhadjhassen.com",
-				"author": {
-					"@type": "Person",
-					"name": "Hassen Ben Hadj Hassen"
-				},
-				"datePublished": "2025-04-12",
-				"description": "Full Stack Developer portfolio showcasing React, Node.js projects and client work.",
-				"potentialAction": {
-					"@type": "SearchAction",
-					"target": "https://hassenbenhadjhassen.com/?q={search_term_string}",
-					"query-input": "required name=search_term_string"
-				}
-			}
-		</script>
+
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>
