@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 
 function Footer() {
 	const { t } = useTranslation();
-	let date = new Date();
-	let year = date.getFullYear();
+	const year = new Date().getFullYear();
+
 	return (
 		<Container fluid className="footer">
 			<Row>
@@ -14,7 +14,7 @@ function Footer() {
 					<h3>{t("footer.developedBy")}</h3>
 				</Col>
 				<Col md="4" className="footer-copywright">
-					<h3>{t("footer.copyright", { year })}</h3>
+					<h3>Copyright © {year} Hassen Ben Hadj Hassen</h3>
 				</Col>
 				<Col md="4" className="footer-body">
 					<ul className="footer-icons">

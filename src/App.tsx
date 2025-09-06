@@ -19,12 +19,11 @@ import Resume from "./components/Resume";
 import Projects from "./components/Projects/Projects";
 
 function App() {
-	const [load, updateLoad] = useState(true);
+	const [load, setLoad] = useState(true);
 
 	useEffect(() => {
 		const handleLoad = () => {
-			console.log("Page loaded");
-			updateLoad(false);
+			setLoad(false);
 		};
 
 		if (document.readyState === "complete") {
@@ -37,7 +36,7 @@ function App() {
 		const timeout = setTimeout(() => {
 			if (load) {
 				console.log("Load timed out, setting to false");
-				updateLoad(false);
+				setLoad(false);
 			}
 		}, 1500);
 
@@ -48,7 +47,7 @@ function App() {
 		};
 	}, [load]);
 	return (
-		<Router>
+		<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
 			<Preloader load={load} />
 			<div className="App" id={load ? "no-scroll" : "scroll"}>
 				<Navbar />

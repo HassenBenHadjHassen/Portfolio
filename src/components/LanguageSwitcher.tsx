@@ -15,7 +15,7 @@ const LanguageSwitcher: React.FC = () => {
 	};
 
 	const getCurrentFlag = () => {
-		return i18n.language === "fr" ? "🇫🇷" : "🇺🇸";
+		return i18n.language === "fr" ? "🇫🇷" : "🇬🇧";
 	};
 
 	return (
@@ -36,7 +36,7 @@ const LanguageSwitcher: React.FC = () => {
 					onClick={() => changeLanguage("en")}
 					className={i18n.language === "en" ? "active" : ""}
 				>
-					🇺🇸 English
+					🇬🇧 English
 				</Dropdown.Item>
 				<Dropdown.Item
 					onClick={() => changeLanguage("fr")}
