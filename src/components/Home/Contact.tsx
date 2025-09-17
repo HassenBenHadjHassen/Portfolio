@@ -213,7 +213,7 @@ function ContactForm() {
 	);
 
 	return (
-		<Container fluid className="home-about-section">
+		<Container fluid className="home-about-section" id="contact">
 			<Container>
 				<Row>
 					<Col md={12} className="home-about-description">

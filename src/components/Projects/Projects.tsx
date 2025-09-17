@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import Particle from "../Particle";
 import SEO from "../SEO/SEO";
 
@@ -38,7 +39,7 @@ const clientSites: ProjectType[] = [
 		title: "GPI (Police Global Indicators)",
 		description:
 			"A sophisticated data visualization website built for the 2024 Police World Summit in Dubai. Contracted by the Dubai Police to showcase global indicators using advanced geospatial mapping. Developed with ReactJS, Leaflet, TypeScript, and styled using Styled Components.",
-		link: "https://gpsi-staging.inrits.tech/",
+		link: "https://gpsi.hassenbenhadjhassen.com/",
 		image: GPI,
 		hash: "L77-TINM0U~9-y9u9I=@bwf+%0$j",
 	},
@@ -187,62 +188,113 @@ function Projects() {
 			/>
 			<Particle />
 			<Container>
-				<h1 className="project-heading">{t("projects.title")}</h1>
-				<p style={{ color: "white" }}>{t("projects.description")}</p>
+				<motion.h1
+					className="project-heading"
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
+				>
+					{t("projects.title")}
+				</motion.h1>
+				<motion.p
+					style={{ color: "white" }}
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.4 }}
+				>
+					{t("projects.description")}
+				</motion.p>
 
 				{/* Client Sites Section */}
-				<h2
+				<motion.h2
 					className="project-subheading"
 					style={{ color: "white", marginTop: "40px", marginBottom: "20px" }}
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.6 }}
 				>
 					<strong className="purple">{t("projects.clientProjects")}</strong>
-				</h2>
+				</motion.h2>
 				<Row style={{ justifyContent: "center" }}>
-					{clientSites.map((project) => (
+					{clientSites.map((project, index) => (
 						<Col key={uuidv4()} md={4} className="project-card">
-							<Suspense fallback={<FallBack />}>
-								<ProjectCard
-									imgPath={project.image}
-									title={project.title}
-									description={project.description}
-									ghLink={project.githubLink}
-									demoLink={project.link}
-									hash={project.hash}
-								/>
-							</Suspense>
+							<motion.div
+								initial={{ opacity: 0, y: 50, scale: 0.9 }}
+								animate={{ opacity: 1, y: 0, scale: 1 }}
+								transition={{
+									duration: 0.6,
+									delay: 0.8 + index * 0.1,
+									ease: "easeOut",
+								}}
+								whileHover={{
+									y: -10,
+									transition: { duration: 0.3 },
+								}}
+							>
+								<Suspense fallback={<FallBack />}>
+									<ProjectCard
+										imgPath={project.image}
+										title={project.title}
+										description={project.description}
+										ghLink={project.githubLink}
+										demoLink={project.link}
+										hash={project.hash}
+									/>
+								</Suspense>
+							</motion.div>
 						</Col>
 					))}
 				</Row>
 
 				{/* Separator */}
-				<hr
+				<motion.hr
 					style={{
 						borderColor: "#6c63ff",
 						borderWidth: "2px",
 						margin: "40px 0",
 					}}
+					initial={{ scaleX: 0 }}
+					animate={{ scaleX: 1 }}
+					transition={{ duration: 1, delay: 1.5 }}
 				/>
 
 				{/* My Sites Section */}
-				<h2
+				<motion.h2
 					className="project-subheading"
-					style={{ color: "white", marginTop: "40px", }}
+					style={{ color: "white", marginTop: "40px" }}
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 1.7 }}
 				>
 					<strong className="purple">{t("projects.personalProjects")}</strong>
-				</h2>
+				</motion.h2>
 				<Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-					{mySites.map((project) => (
+					{mySites.map((project, index) => (
 						<Col key={uuidv4()} md={4} className="project-card">
-							<Suspense fallback={<FallBack />}>
-								<ProjectCard
-									imgPath={project.image}
-									title={project.title}
-									description={project.description}
-									ghLink={project.githubLink}
-									demoLink={project.link}
-									hash={project.hash}
-								/>
-							</Suspense>
+							<motion.div
+								initial={{ opacity: 0, y: 50, scale: 0.9 }}
+								animate={{ opacity: 1, y: 0, scale: 1 }}
+								transition={{
+									duration: 0.6,
+									delay: 1.9 + index * 0.1,
+									ease: "easeOut",
+								}}
+								whileHover={{
+									y: -10,
+									transition: { duration: 0.3 },
+								}}
+							>
+								<Suspense fallback={<FallBack />}>
+									<ProjectCard
+										imgPath={project.image}
+										title={project.title}
+										description={project.description}
+										ghLink={project.githubLink}
+										demoLink={project.link}
+										hash={project.hash}
+									/>
+								</Suspense>
+							</motion.div>
 						</Col>
 					))}
 				</Row>

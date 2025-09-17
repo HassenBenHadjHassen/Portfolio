@@ -81,8 +81,27 @@
 		}
 	},
 	"resume": {
-		"title": "Resume & CV - Hassen Ben Hadj Hassen | Full Stack Developer",
-		"download": "Download CV"
+		"title": "My Professional Journey",
+		"subtitle": "Full Stack Developer specializing in React, Node.js, and modern web technologies",
+		"download": "Download Resume",
+		"stats": {
+			"yearsExperience": "Years Experience",
+			"projectsCompleted": "Projects Completed",
+			"clientWebsites": "Client Websites",
+			"modernStack": "Modern Stack"
+		},
+		"techStack": {
+			"title": "Core Technologies",
+			"react": "React.js",
+			"nodejs": "Node.js",
+			"typescript": "TypeScript",
+			"mongodb": "MongoDB"
+		},
+		"downloadSection": {
+			"title": "Ready to work together?",
+			"subtitle": "Download my resume to learn more about my experience and skills",
+			"getInTouch": "Get in Touch"
+		}
 	},
 	"footer": {
 		"developedBy": "Developed by Hassen Ben Hadj Hassen",

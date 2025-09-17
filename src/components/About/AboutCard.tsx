@@ -6,10 +6,25 @@ function AboutCard() {
 	const { t } = useTranslation();
 
 	return (
-		<Card className="quote-card-view">
-			<Card.Body>
-				<blockquote className="blockquote mb-0">
-					<p style={{ textAlign: "justify" }}>
+		<Card
+			className="quote-card-view"
+			style={{
+				border: "none",
+				boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+				borderRadius: "15px",
+				backgroundColor: "rgba(255,255,255,0.95)",
+			}}
+		>
+			<Card.Body style={{ padding: "1.5rem" }}>
+				<blockquote className="blockquote mb-3">
+					<p
+						style={{
+							textAlign: "justify",
+							fontSize: "1em",
+							lineHeight: "1.5",
+							marginBottom: "1.5rem",
+						}}
+					>
 						{t("about.personalDescription")
 							.split(" ")
 							.map((word, index) => {
@@ -84,112 +99,146 @@ function AboutCard() {
 								);
 							})}
 					</p>
-					<ul>
-						<li className="about-activity">
-							<ImPointRight />
-							{t("about.activities.exploring")
-								.split(" ")
-								.map((word, index) => {
-									const keyWords = [
-										"cutting-edge",
-										"technologies",
-										"frameworks",
-										"pointe",
-										"technologies",
-										"frameworks",
-									];
-									const isKeyWord = keyWords.some((key) =>
-										word.toLowerCase().includes(key.toLowerCase())
-									);
-									return isKeyWord ? (
-										<span key={`exploring-${word}-${index}`} className="blue">
-											{" "}
-											{word}{" "}
-										</span>
-									) : (
-										`${word} `
-									);
-								})}
-						</li>
-						<li className="about-activity">
-							<ImPointRight />
-							{t("about.activities.contributing")
-								.split(" ")
-								.map((word, index) => {
-									const keyWords = [
-										"open-source",
-										"communities",
-										"open-source",
-										"communautés",
-									];
-									const isKeyWord = keyWords.some((key) =>
-										word.toLowerCase().includes(key.toLowerCase())
-									);
-									return isKeyWord ? (
-										<span
-											key={`contributing-${word}-${index}`}
-											className="green"
-										>
-											{" "}
-											{word}{" "}
-										</span>
-									) : (
-										`${word} `
-									);
-								})}
-						</li>
-						<li className="about-activity">
-							<ImPointRight />
-							{t("about.activities.collaborating")
-								.split(" ")
-								.map((word, index) => {
-									const keyWords = [
-										"innovative",
-										"developers",
-										"innovants",
-										"développeurs",
-									];
-									const isKeyWord = keyWords.some((key) =>
-										word.toLowerCase().includes(key.toLowerCase())
-									);
-									return isKeyWord ? (
-										<span
-											key={`collaborating-${word}-${index}`}
-											className="orange"
-										>
-											{" "}
-											{word}{" "}
-										</span>
-									) : (
-										`${word} `
-									);
-								})}
-						</li>
-						<li className="about-activity">
-							<ImPointRight />
-							{t("about.activities.learning")
-								.split(" ")
-								.map((word, index) => {
-									const keyWords = [
-										"learning",
-										"trends",
-										"apprentissage",
-										"tendances",
-									];
-									const isKeyWord = keyWords.some((key) =>
-										word.toLowerCase().includes(key.toLowerCase())
-									);
-									return isKeyWord ? (
-										<span key={`learning-${word}-${index}`} className="cyan">
-											{" "}
-											{word}{" "}
-										</span>
-									) : (
-										`${word} `
-									);
-								})}
-						</li>
-					</ul>
+					<div className="row">
+						<div className="col-12 col-md-6">
+							<ul className="list-unstyled" style={{ marginBottom: "1rem" }}>
+								<li className="about-activity mb-2">
+									<ImPointRight
+										className="me-2"
+										style={{ fontSize: "0.9rem" }}
+									/>
+									<span style={{ fontSize: "0.9rem" }}>
+										{t("about.activities.exploring")
+											.split(" ")
+											.map((word, index) => {
+												const keyWords = [
+													"cutting-edge",
+													"technologies",
+													"frameworks",
+													"pointe",
+													"technologies",
+													"frameworks",
+												];
+												const isKeyWord = keyWords.some((key) =>
+													word.toLowerCase().includes(key.toLowerCase())
+												);
+												return isKeyWord ? (
+													<span
+														key={`exploring-${word}-${index}`}
+														className="blue"
+													>
+														{" "}
+														{word}{" "}
+													</span>
+												) : (
+													`${word} `
+												);
+											})}
+									</span>
+								</li>
+								<li className="about-activity mb-2">
+									<ImPointRight
+										className="me-2"
+										style={{ fontSize: "0.9rem" }}
+									/>
+									<span style={{ fontSize: "0.9rem" }}>
+										{t("about.activities.contributing")
+											.split(" ")
+											.map((word, index) => {
+												const keyWords = [
+													"open-source",
+													"communities",
+													"open-source",
+													"communautés",
+												];
+												const isKeyWord = keyWords.some((key) =>
+													word.toLowerCase().includes(key.toLowerCase())
+												);
+												return isKeyWord ? (
+													<span
+														key={`contributing-${word}-${index}`}
+														className="green"
+													>
+														{" "}
+														{word}{" "}
+													</span>
+												) : (
+													`${word} `
+												);
+											})}
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div className="col-12 col-md-6">
+							<ul className="list-unstyled">
+								<li className="about-activity mb-2">
+									<ImPointRight
+										className="me-2"
+										style={{ fontSize: "0.9rem" }}
+									/>
+									<span style={{ fontSize: "0.9rem" }}>
+										{t("about.activities.collaborating")
+											.split(" ")
+											.map((word, index) => {
+												const keyWords = [
+													"innovative",
+													"developers",
+													"innovants",
+													"développeurs",
+												];
+												const isKeyWord = keyWords.some((key) =>
+													word.toLowerCase().includes(key.toLowerCase())
+												);
+												return isKeyWord ? (
+													<span
+														key={`collaborating-${word}-${index}`}
+														className="orange"
+													>
+														{" "}
+														{word}{" "}
+													</span>
+												) : (
+													`${word} `
+												);
+											})}
+									</span>
+								</li>
+								<li className="about-activity mb-2">
+									<ImPointRight
+										className="me-2"
+										style={{ fontSize: "0.9rem" }}
+									/>
+									<span style={{ fontSize: "0.9rem" }}>
+										{t("about.activities.learning")
+											.split(" ")
+											.map((word, index) => {
+												const keyWords = [
+													"learning",
+													"trends",
+													"apprentissage",
+													"tendances",
+												];
+												const isKeyWord = keyWords.some((key) =>
+													word.toLowerCase().includes(key.toLowerCase())
+												);
+												return isKeyWord ? (
+													<span
+														key={`learning-${word}-${index}`}
+														className="cyan"
+													>
+														{" "}
+														{word}{" "}
+													</span>
+												) : (
+													`${word} `
+												);
+											})}
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</blockquote>
 			</Card.Body>
 		</Card>

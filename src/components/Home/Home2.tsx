@@ -149,7 +149,7 @@ function Home2() {
 							</p>
 						</div>
 					</Col>
-					<Col md={4} className="myAvtar">
+					<Col md={4} className="myAvtar d-flex justify-content-center">
 						<Tilt>
 							<img src={Avatar} className="img-fluid" alt="avatar" />
 						</Tilt>

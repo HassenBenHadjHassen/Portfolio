@@ -14,6 +14,27 @@ html {
 	--imp-text-color: #c770f0;
 }
 
+/* Performance optimizations for animations */
+* {
+	will-change: auto;
+}
+
+.animated-element {
+	will-change: transform, opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
 .purple {
 	color: var(--imp-text-color) !important;
 }
@@ -52,10 +73,12 @@ button:focus {
 	background-image: url("assets/pre.svg");
 	background-repeat: no-repeat;
 	background-position: center;
+	animation: fadeIn 0.5s ease-in-out;
 }
 
 #preloader-none {
 	opacity: 0;
+	animation: fadeOut 0.5s ease-in-out;
 }
 
 #no-scroll {
@@ -69,6 +92,99 @@ button:focus {
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromBottom {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromRight {
+	from {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
 	}
 }
 
@@ -239,6 +355,22 @@ button:focus {
 	animation-iteration-count: infinite; /* Never stop waving :) */
 	transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
 	display: inline-block;
+}
+
+/* Enhanced floating animation for home image */
+.home-section img {
+	animation: float 6s ease-in-out infinite;
+}
+
+/* Staggered animation for text elements */
+.heading,
+.heading-name {
+	animation: slideInFromLeft 0.8s ease-out;
+}
+
+/* Enhanced particle background */
+#tsparticles {
+	animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes wave-animation {
@@ -493,9 +625,10 @@ button:focus {
 	height: 100% !important;
 }
 .project-card-view:hover {
-	transform: scale(1.02) !important;
+	transform: scale(1.02) translateY(-5px) !important;
 	overflow: hidden !important;
-	box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+	box-shadow: 0 8px 25px 5px rgba(129, 72, 144, 0.561) !important;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .blog-card {
@@ -524,9 +657,10 @@ button:focus {
 }
 
 .blog-card-view:hover {
-	transform: scale(1.02) !important;
+	transform: scale(1.02) translateY(-5px) !important;
 	overflow: hidden !important;
-	box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
+	box-shadow: 0 8px 25px 5px rgba(155, 88, 173, 0.65) !important;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .card-img-top {
@@ -600,6 +734,7 @@ button:focus {
 	transform: scale(1.05) !important;
 	overflow: hidden !important;
 	border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+	animation: pulse 0.6s ease-in-out !important;
 }
 .tech-icon-images {
 	padding: 20px !important;
@@ -636,6 +771,259 @@ button:focus {
 	color: white !important;
 }
 
+/* Resume Header Section */
+.resume-header-section {
+	padding: 40px 0;
+	margin-bottom: 40px;
+}
+
+.resume-main-title {
+	font-size: 3.5em !important;
+	font-weight: 700 !important;
+	margin-bottom: 20px !important;
+	background: linear-gradient(135deg, #c770f0, #4fc3f7, #81c784);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0 0 30px rgba(199, 112, 240, 0.3);
+}
+
+.resume-subtitle {
+	font-size: 1.3em !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	margin-bottom: 0 !important;
+}
+
+/* Resume Stats Cards */
+.resume-stat-card {
+	background: rgba(255, 255, 255, 0.05) !important;
+	backdrop-filter: blur(10px) !important;
+	border: 1px solid rgba(199, 112, 240, 0.2) !important;
+	border-radius: 15px !important;
+	padding: 30px 20px !important;
+	text-align: center !important;
+	transition: all 0.3s ease !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+
+.resume-stat-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(199, 112, 240, 0.1),
+		transparent
+	);
+	transition: left 0.5s ease;
+}
+
+.resume-stat-card:hover::before {
+	left: 100%;
+}
+
+.resume-stat-card:hover {
+	background: rgba(199, 112, 240, 0.1) !important;
+	border-color: rgba(199, 112, 240, 0.5) !important;
+	box-shadow: 0 10px 30px rgba(199, 112, 240, 0.2) !important;
+}
+
+.stat-icon {
+	font-size: 2.5em !important;
+	color: #c770f0 !important;
+	margin-bottom: 15px !important;
+	display: block !important;
+}
+
+.resume-stat-card h3 {
+	font-size: 2.5em !important;
+	font-weight: 700 !important;
+	margin-bottom: 10px !important;
+	color: white !important;
+}
+
+.resume-stat-card p {
+	font-size: 1.1em !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	margin-bottom: 0 !important;
+}
+
+/* Tech Highlights */
+.tech-highlights {
+	text-align: center !important;
+	padding: 40px 0 !important;
+}
+
+.tech-highlights-title {
+	font-size: 2.2em !important;
+	font-weight: 600 !important;
+	margin-bottom: 30px !important;
+	color: white !important;
+}
+
+.tech-stack-grid {
+	display: grid !important;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+	gap: 20px !important;
+	max-width: 600px !important;
+	margin: 0 auto !important;
+}
+
+.tech-item {
+	background: rgba(255, 255, 255, 0.05) !important;
+	backdrop-filter: blur(10px) !important;
+	border: 1px solid rgba(199, 112, 240, 0.2) !important;
+	border-radius: 12px !important;
+	padding: 20px !important;
+	text-align: center !important;
+	transition: all 0.3s ease !important;
+	cursor: pointer !important;
+}
+
+.tech-item:hover {
+	background: rgba(199, 112, 240, 0.1) !important;
+	border-color: rgba(199, 112, 240, 0.5) !important;
+	box-shadow: 0 8px 25px rgba(199, 112, 240, 0.2) !important;
+}
+
+.tech-icon {
+	font-size: 2.5em !important;
+	color: #c770f0 !important;
+	margin-bottom: 10px !important;
+	display: block !important;
+}
+
+.tech-item span {
+	font-size: 1.1em !important;
+	font-weight: 500 !important;
+	color: white !important;
+}
+
+/* Enhanced Download Section */
+.download-section {
+	padding: 60px 0 !important;
+}
+
+.download-container {
+	background: rgba(255, 255, 255, 0.03) !important;
+	backdrop-filter: blur(15px) !important;
+	border: 1px solid rgba(199, 112, 240, 0.2) !important;
+	border-radius: 20px !important;
+	padding: 50px 30px !important;
+	max-width: 600px !important;
+	margin: 0 auto !important;
+}
+
+.download-title {
+	font-size: 2.5em !important;
+	font-weight: 700 !important;
+	margin-bottom: 20px !important;
+	color: white !important;
+}
+
+.download-subtitle {
+	font-size: 1.2em !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	margin-bottom: 30px !important;
+}
+
+.download-buttons {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	gap: 20px !important;
+	flex-wrap: wrap !important;
+}
+
+.download-cv-btn {
+	padding: 15px 30px !important;
+	font-size: 1.1em !important;
+	font-weight: 600 !important;
+	border-radius: 50px !important;
+	transition: all 0.3s ease !important;
+	text-decoration: none !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	min-width: 180px !important;
+	justify-content: center !important;
+}
+
+.download-cv-btn.primary {
+	background: linear-gradient(135deg, #c770f0, #4fc3f7) !important;
+	border: none !important;
+	color: white !important;
+	box-shadow: 0 8px 25px rgba(199, 112, 240, 0.3) !important;
+}
+
+.download-cv-btn.primary:hover {
+	background: linear-gradient(135deg, #b562d6, #3fb3e6) !important;
+	box-shadow: 0 12px 35px rgba(199, 112, 240, 0.4) !important;
+	transform: translateY(-2px) !important;
+}
+
+.download-cv-btn.secondary {
+	background: transparent !important;
+	border: 2px solid rgba(255, 255, 255, 0.3) !important;
+	color: white !important;
+}
+
+.download-cv-btn.secondary:hover {
+	background: rgba(255, 255, 255, 0.1) !important;
+	border-color: rgba(255, 255, 255, 0.6) !important;
+	color: white !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+	.resume-main-title {
+		font-size: 2.5em !important;
+	}
+
+	.resume-subtitle {
+		font-size: 1.1em !important;
+	}
+
+	.resume-stat-card {
+		padding: 20px 15px !important;
+	}
+
+	.stat-icon {
+		font-size: 2em !important;
+	}
+
+	.resume-stat-card h3 {
+		font-size: 2em !important;
+	}
+
+	.tech-stack-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+		gap: 15px !important;
+	}
+
+	.download-container {
+		padding: 30px 20px !important;
+	}
+
+	.download-title {
+		font-size: 2em !important;
+	}
+
+	.download-buttons {
+		flex-direction: column !important;
+		gap: 15px !important;
+	}
+
+	.download-cv-btn {
+		width: 100% !important;
+		min-width: auto !important;
+	}
+}
+
 .resume {
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -658,15 +1046,28 @@ button:focus {
 .pdf-container {
 	max-width: 100%;
 	overflow-x: hidden;
-	margin: auto;
+	margin: 20px auto 0 auto;
+	background: rgba(255, 255, 255, 0.02);
+	backdrop-filter: blur(10px);
+	border-radius: 15px;
+	padding: 20px;
+	border: 1px solid rgba(199, 112, 240, 0.1);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .pdf-file {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 85%;
+	width: 100%;
 	margin: 0 auto;
+}
+
+.pdf-viewer-wrapper {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 767px) {
@@ -743,13 +1144,6 @@ button:focus {
 	min-height: 100vh;
 }
 
-.download-button-row {
-	display: flex;
-	align-self: center;
-	justify-self: center;
-	width: 42.5%;
-}
-
 .resume-section {
 	padding: 110px 20px 30px;
 }
@@ -764,7 +1158,7 @@ button:focus {
 
 .pdf-container {
 	width: 100%;
-	margin: 0 auto;
+	margin: 20px auto 0 auto;
 	overflow: hidden;
 }
 
@@ -901,4 +1295,153 @@ button:focus {
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
 	color: rgba(255, 255, 255, 0.7);
+}
+
+/* --------- */
+/* PDF Viewer Mobile Fixes */
+/* --------- */
+
+.resume-page {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+.pdf-container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 20px auto 0 auto;
+	overflow: hidden;
+	background: transparent;
+	border-radius: 10px;
+}
+
+.pdf-file {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* PDF Viewer specific styles */
+.rpv-core__viewer {
+	width: 100% !important;
+	overflow: hidden !important;
+	background: transparent !important;
+}
+
+.rpv-core__inner-page {
+	width: 100% !important;
+	overflow: hidden !important;
+	background: transparent !important;
+}
+
+.rpv-core__page {
+	width: 100% !important;
+	height: auto !important;
+	background: transparent !important;
+}
+
+.rpv-core__canvas {
+	width: 100% !important;
+	height: auto !important;
+	background: transparent !important;
+}
+
+.rpv-core__page-layer {
+	background: transparent !important;
+}
+
+.rpv-core__canvas-layer {
+	background: transparent !important;
+}
+
+/* Make PDF background dark/transparent */
+.rpv-core__page-layer--single {
+	background: rgba(255, 255, 255, 0.1) !important;
+	backdrop-filter: blur(10px) !important;
+	border-radius: 8px !important;
+}
+
+/* Mobile specific PDF fixes */
+@media (max-width: 768px) {
+	.resume-page {
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	.resume-section {
+		overflow-x: hidden;
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.pdf-container {
+		width: 100%;
+		overflow: visible;
+		border-radius: 8px;
+		padding: 0 10px;
+		margin: 20px auto 0 auto;
+		min-height: 400px;
+		max-width: 95%;
+	}
+
+	.pdf-file {
+		width: 100%;
+		overflow: visible;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		max-width: 90%;
+		margin: 0 auto;
+		min-height: 400px;
+	}
+
+	.rpv-core__viewer {
+		width: 100% !important;
+		overflow: hidden !important;
+		background: transparent !important;
+	}
+
+	.rpv-core__inner-page {
+		width: 100% !important;
+		overflow: visible !important;
+		background: transparent !important;
+		transform: scale(1) !important;
+		transform-origin: top center !important;
+		margin: 0 auto !important;
+	}
+
+	.rpv-core__page {
+		width: 100% !important;
+		height: auto !important;
+		background: transparent !important;
+	}
+
+	.rpv-core__canvas {
+		width: 100% !important;
+		height: auto !important;
+		background: transparent !important;
+	}
+
+	.rpv-core__page-layer--single {
+		background: rgba(255, 255, 255, 0.05) !important;
+		backdrop-filter: blur(5px) !important;
+		border-radius: 6px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.resume-section {
+		padding: 15px 5px;
+	}
+
+	.pdf-container {
+		padding: 0;
+		margin: 20px auto 0 auto;
+	}
+
+	.rpv-core__inner-page {
+		transform: scale(1) !important;
+		transform-origin: top center !important;
+		margin: 0 auto !important;
+		overflow: visible !important;
+	}
 }

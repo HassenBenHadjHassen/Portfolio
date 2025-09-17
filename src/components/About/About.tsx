@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import AboutCard from "./AboutCard";
@@ -49,21 +50,32 @@ function About() {
 			/>
 			<Particle />
 			<Container>
-				<Row style={{ justifyContent: "center", padding: "10px" }}>
+				<Row className="justify-content-center mb-5">
 					<Col
+						xs={12}
 						md={7}
+						className="d-flex flex-column justify-content-center order-2 order-md-1"
 						style={{
-							justifyContent: "center",
 							paddingTop: "30px",
-							paddingBottom: "50px",
+							paddingBottom: "30px",
 						}}
 					>
-						<h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+						<motion.h1
+							style={{
+								fontSize: "2.2em",
+								paddingBottom: "20px",
+								textAlign: "center",
+								marginBottom: "30px",
+							}}
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.2 }}
+						>
 							{t("about.title")
 								.split(" ")
 								.map((word, index) =>
 									word === "About" || word === "À" ? (
-										<span key={`title-${index}`} className="purple">
+										<span key={`title-${word}-${index}`} className="purple">
 											{" "}
 											{word}{" "}
 										</span>
@@ -71,44 +83,98 @@ function About() {
 										`${word} `
 									)
 								)}
-						</h1>
-						<AboutCard />
+						</motion.h1>
+						<motion.div
+							initial={{ opacity: 0, x: -50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.4 }}
+						>
+							<AboutCard />
+						</motion.div>
 					</Col>
 					<Col
+						xs={12}
 						md={5}
-						style={{ paddingTop: "120px", paddingBottom: "50px" }}
-						className="about-img"
+						className="d-flex justify-content-center align-items-center order-1 order-md-2"
+						style={{
+							paddingTop: "20px",
+							paddingBottom: "20px",
+						}}
 					>
-						<img src={AboutImage} alt="about" className="img-fluid" />
+						<motion.img
+							src={AboutImage}
+							alt="about"
+							className="img-fluid"
+							style={{
+								maxWidth: "300px",
+								height: "auto",
+								width: "100%",
+							}}
+							initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+							animate={{ opacity: 1, scale: 1, rotate: 0 }}
+							transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+							whileHover={{
+								scale: 1.05,
+								rotate: -2,
+								transition: { duration: 0.3 },
+							}}
+						/>
 					</Col>
 				</Row>
-				<h1 className="project-heading">
-					{t("about.skillset")
-						.split(" ")
-						.map((word, index) => {
-							const keyWords = [
-								"Professional",
-								"Skillset",
-								"Compétences",
-								"Professionnelles",
-							];
-							const isKeyWord = keyWords.some((key) => word.includes(key));
-							return isKeyWord ? (
-								<span key={`skillset-${word}-${index}`} className="purple">
-									{" "}
-									{word}{" "}
-								</span>
-							) : (
-								`${word} `
-							);
-						})}
-				</h1>
+				<motion.div
+					className="text-center mb-4"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.6 }}
+				>
+					<h1
+						className="project-heading"
+						style={{
+							fontSize: "1.8em",
+							marginBottom: "30px",
+							paddingTop: "20px",
+						}}
+					>
+						{t("about.skillset")
+							.split(" ")
+							.map((word, index) => {
+								const keyWords = [
+									"Professional",
+									"Skillset",
+									"Compétences",
+									"Professionnelles",
+								];
+								const isKeyWord = keyWords.some((key) => word.includes(key));
+								return isKeyWord ? (
+									<span key={`skillset-${word}-${index}`} className="purple">
+										{" "}
+										{word}{" "}
+									</span>
+								) : (
+									`${word} `
+								);
+							})}
+					</h1>
+				</motion.div>
 
-				<Techstack />
+				<motion.div
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.8 }}
+				>
+					<Techstack />
+				</motion.div>
 
-				<Suspense fallback={<FallBack />}>
-					<GitHub />
-				</Suspense>
+				<motion.div
+					className="mt-5 pt-4"
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 1.0 }}
+				>
+					<Suspense fallback={<FallBack />}>
+						<GitHub />
+					</Suspense>
+				</motion.div>
 			</Container>
 		</Container>
 	);

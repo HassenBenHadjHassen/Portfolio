@@ -4,7 +4,9 @@ import {
 	Route,
 	Routes,
 	Navigate,
+	useLocation,
 } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,6 +19,37 @@ import ScrollToTop from "./components/ScrollToTop";
 import About from "./components/About/About";
 import Resume from "./components/Resume";
 import Projects from "./components/Projects/Projects";
+
+function AppContent() {
+	const location = useLocation();
+
+	return (
+		<div className="App">
+			<Navbar />
+			<ScrollToTop />
+			<AnimatePresence mode="wait">
+				<motion.div
+					key={location.pathname}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: -20 }}
+					transition={{ duration: 0.3, ease: "easeInOut" }}
+				>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/project" element={<Projects />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/resume" element={<Resume />} />
+						<Route path="/sitemap.xml" element={null} />
+						<Route path="/robots.txt" element={null} />
+						<Route path="*" element={<Navigate to="/" />} />
+					</Routes>
+				</motion.div>
+			</AnimatePresence>
+			<Footer />
+		</div>
+	);
+}
 
 function App() {
 	const [load, setLoad] = useState(true);
@@ -46,22 +79,12 @@ function App() {
 			clearTimeout(timeout);
 		};
 	}, [load]);
+
 	return (
 		<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
 			<Preloader load={load} />
-			<div className="App" id={load ? "no-scroll" : "scroll"}>
-				<Navbar />
-				<ScrollToTop />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/project" element={<Projects />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/resume" element={<Resume />} />
-					<Route path="/sitemap.xml" element={null} />
-					<Route path="/robots.txt" element={null} />
-					<Route path="*" element={<Navigate to="/" />} />
-				</Routes>
-				<Footer />
+			<div id={load ? "no-scroll" : "scroll"}>
+				<AppContent />
 			</div>
 		</Router>
 	);

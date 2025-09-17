@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import Type from "./Type";
 import Particle from "../Particle";
 import HomeImage from "../../assets/home-main.svg";
@@ -41,29 +42,53 @@ function Home() {
 				<Container className="home-content">
 					<Row>
 						<Col md={7} className="home-header">
-							<h1 style={{ paddingBottom: 15 }} className="heading">
+							<motion.h1
+								style={{ paddingBottom: 15 }}
+								className="heading"
+								initial={{ opacity: 0, y: 50 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.2 }}
+							>
 								{t("home.greeting")}{" "}
 								<span className="wave" aria-labelledby="wave">
 									👋🏻
 								</span>
-							</h1>
+							</motion.h1>
 
-							<h1 className="heading-name">
+							<motion.h1
+								className="heading-name"
+								initial={{ opacity: 0, y: 50 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.4 }}
+							>
 								{t("home.name")}
 								<strong className="main-name"> {t("home.fullName")}</strong>
-							</h1>
+							</motion.h1>
 
-							<div style={{ textAlign: "left" }}>
+							<motion.div
+								style={{ textAlign: "left" }}
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.6 }}
+							>
 								<Type />
-							</div>
+							</motion.div>
 						</Col>
 
 						<Col md={5} style={{ paddingBottom: 20 }}>
-							<img
+							<motion.img
 								src={HomeImage}
 								alt="home pic"
 								className="img-fluid"
 								style={{ maxHeight: "450px" }}
+								initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+								animate={{ opacity: 1, scale: 1, rotate: 0 }}
+								transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+								whileHover={{
+									scale: 1.05,
+									rotate: 2,
+									transition: { duration: 0.3 },
+								}}
 							/>
 						</Col>
 					</Row>
