@@ -43,7 +43,7 @@
 	},
 	"projects": {
 		"title": "Professional Portfolio",
-		"description": "Full Stack Developer Portfolio: A showcase of projects, online stores, and dynamic web applications—ranging from large-scale enterprise solutions to custom-built experiences.",
+		"description": "Full Stack Developer Portfolio: A showcase of projects, online stores, and dynamic web applications ranging from large-scale enterprise solutions to custom-built experiences.",
 		"viewProject": "View Project",
 		"viewCode": "View Code",
 		"clientProjects": "Client Projects",
