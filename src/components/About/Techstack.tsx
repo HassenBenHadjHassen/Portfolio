@@ -58,7 +58,7 @@ function Techstack() {
 		},
 	];
 
-	const renderTechRow = (startIndex, endIndex) => (
+	const renderTechRow = (startIndex: number, endIndex: number) => (
 		<Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
 			{technologies.slice(startIndex, endIndex).map((tech, index) => (
 				<Col
