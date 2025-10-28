@@ -16,7 +16,7 @@ import DuboisRestauration from "../../assets/Projects/dubois-restauration.jpg";
 import PinheiroBat from "../../assets/Projects/pinheiro.png";
 import OummyDiag from "../../assets/Projects/oummy.png";
 import MLA from "../../assets/Projects/mla.png";
-import Net23 from "../../assets/Projects/net23.png";
+// import Net23 from "../../assets/Projects/net23.png";
 import MartinPaysage from "../../assets/Projects/martin.png";
 import LoudiaPropreté from "../../assets/Projects/loudia.png";
 
@@ -84,14 +84,14 @@ const clientSites: ProjectType[] = [
 		image: MLA,
 		hash: "LEIPFnD$?b9Y=~j]kBj[~XofayoL",
 	},
-	{
-		title: "Net23",
-		description:
-			"Corporate website for an IT and networking solutions provider. Developed with a focus on clarity and professionalism, showcasing service details, technical expertise, and contact accessibility for business clients.",
-		link: "https://net23.fr/",
-		image: Net23,
-		hash: "LHCICG9b?G9c}$j[bIsl~UbcjYs+",
-	},
+	// {
+	// 	title: "Net23",
+	// 	description:
+	// 		"Corporate website for an IT and networking solutions provider. Developed with a focus on clarity and professionalism, showcasing service details, technical expertise, and contact accessibility for business clients.",
+	// 	link: "https://net23.fr/",
+	// 	image: Net23,
+	// 	hash: "LHCICG9b?G9c}$j[bIsl~UbcjYs+",
+	// },
 	{
 		title: "Martin Paysage",
 		description:

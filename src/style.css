@@ -1313,6 +1313,8 @@ button:focus {
 	overflow: hidden;
 	background: transparent;
 	border-radius: 10px;
+	max-height: 80vh;
+	overflow-y: auto;
 }
 
 .pdf-file {
@@ -1381,6 +1383,8 @@ button:focus {
 		margin: 20px auto 0 auto;
 		min-height: 400px;
 		max-width: 95%;
+		max-height: 75vh !important;
+		overflow-y: auto !important;
 	}
 
 	.pdf-file {
@@ -1392,12 +1396,16 @@ button:focus {
 		max-width: 90%;
 		margin: 0 auto;
 		min-height: 400px;
+		overflow-y: auto !important;
+		max-height: 70vh !important;
 	}
 
 	.rpv-core__viewer {
 		width: 100% !important;
 		overflow: hidden !important;
 		background: transparent !important;
+		overflow-y: auto !important;
+		max-height: 70vh !important;
 	}
 
 	.rpv-core__inner-page {
@@ -1443,5 +1451,44 @@ button:focus {
 		transform-origin: top center !important;
 		margin: 0 auto !important;
 		overflow: visible !important;
+	}
+}
+
+/* Mobile Download Hero */
+.mobile-download-hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2.5em;
+	margin-top: 0.5em;
+	padding: 2em 0.7em 1em 0.7em;
+	background: rgba(255, 255, 255, 0.06);
+	border-radius: 18px;
+	box-shadow: 0 6px 26px rgba(199, 112, 240, 0.11);
+}
+.hero-download-icon {
+	font-size: 3.5em;
+	color: #c770f0;
+	margin-bottom: 0.25em;
+	animation: pulse 1.25s infinite alternate;
+}
+.hero-download-title {
+	font-size: 1.65em;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 0.6em;
+	letter-spacing: 0.2px;
+	text-align: center;
+}
+.hero-download-subtitle {
+	font-size: 1.03em;
+	color: #beace0;
+	text-align: center;
+	line-height: 1.4;
+}
+@media (min-width: 769px) {
+	.mobile-download-hero {
+		display: none;
 	}
 }

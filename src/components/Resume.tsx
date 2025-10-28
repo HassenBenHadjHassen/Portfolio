@@ -230,20 +230,26 @@ function Resume() {
 				</motion.div>
 
 				{/* PDF Viewer Section */}
-				<Row className="justify-content-center">
-					<motion.div
-						className="pdf-container"
-						initial={{ opacity: 0, y: 50, scale: 0.9 }}
-						animate={{ opacity: 1, y: 0, scale: 1 }}
-						transition={{ duration: 0.8, delay: 1.2 }}
-						whileHover={{
-							scale: 1.02,
-							transition: { duration: 0.3 },
-						}}
-					>
-						<PdfComp pdfFile={pdf} isMobile={isMobile} workerUrl={workerUrl} />
-					</motion.div>
-				</Row>
+				{!isMobile && (
+					<Row className="justify-content-center">
+						<motion.div
+							className="pdf-container"
+							initial={{ opacity: 0, y: 50, scale: 0.9 }}
+							animate={{ opacity: 1, y: 0, scale: 1 }}
+							transition={{ duration: 0.8, delay: 1.2 }}
+							whileHover={{
+								scale: 1.02,
+								transition: { duration: 0.3 },
+							}}
+						>
+							<PdfComp
+								pdfFile={pdf}
+								isMobile={isMobile}
+								workerUrl={workerUrl}
+							/>
+						</motion.div>
+					</Row>
+				)}
 
 				{/* Enhanced Download Section */}
 				<Row className="download-section mt-5">
@@ -254,6 +260,22 @@ function Resume() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 1.4 }}
 						>
+							{isMobile && (
+								<div
+								className="mobile-download-hero"
+								>
+									<AiOutlineDownload className="hero-download-icon" />
+									<div className="hero-download-title">
+										{t("resume.mobileDownloadTitle", "Get My Resume")}
+									</div>
+									<div className="hero-download-subtitle">
+										{t(
+											"resume.mobileDownloadSubtitle",
+											"Download my resume or get in touch!"
+										)}
+									</div>
+								</div>
+							)}
 							<h3 className="download-title">
 								{t("resume.downloadSection.title")}
 							</h3>
