@@ -12,6 +12,7 @@ import SecureChatApp from "../../assets/Projects/secure-chat-app.png";
 import SmothScrollReact from "../../assets/Projects/smooth-scroll-react.png";
 
 import CardioPro from "../../assets/Projects/cardiopro.png";
+import DuboisRestauration from "../../assets/Projects/dubois-restauration.jpg";
 import PinheiroBat from "../../assets/Projects/pinheiro.png";
 import OummyDiag from "../../assets/Projects/oummy.png";
 import MLA from "../../assets/Projects/mla.png";
@@ -38,7 +39,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "GPI (Police Global Indicators)",
 		description:
-			"A sophisticated data visualization website built for the 2024 Police World Summit in Dubai. Contracted by the Dubai Police to showcase global indicators using advanced geospatial mapping. Developed with ReactJS, Leaflet, TypeScript, and styled using Styled Components.",
+			"A high-performance data visualization platform built for the 2024 Police World Summit in Dubai. Commissioned by Dubai Police to display global indicators through advanced geospatial mapping. Developed with ReactJS, TypeScript, and Leaflet, and styled using Styled Components for a polished, interactive experience.",
 		link: "https://gpsi.hassenbenhadjhassen.com/",
 		image: GPI,
 		hash: "L77-TINM0U~9-y9u9I=@bwf+%0$j",
@@ -46,15 +47,23 @@ const clientSites: ProjectType[] = [
 	{
 		title: "CardioPro",
 		description:
-			"CardioPro is a leading French provider of automated external defibrillators (DAE), offering sales, rentals, technical support, and educational resources on cardiac health and CPR. Known for excellence, the website ranks among the top 5 on Google in its field.",
+			"Official website for a leading French provider of defibrillators (DAE), offering sales, rentals, technical support, and CPR training. Built with Laravel and Symfony for robust backend management, and optimized for SEO and performance, ranking among the top 5 Google results in its category.",
 		link: "https://cardiopro.fr/",
 		image: CardioPro,
 		hash: "LiO3^Uxu?b9F~Toft7oI9IRjIUt8",
 	},
 	{
+		title: "DUBOIS RESTAURATION",
+		description:
+			"Fully responsive corporate website for Dubois Restauration, crafted with WordPress, Elementor, PHP, and MySQL. Deployed via Docker and Nginx with SSL, SEO optimization, image compression, and GDPR-compliant contact forms for a secure and high-performing user experience.",
+		link: "https://dubois-restauration.hassenbenhadjhassen.com/",
+		image: DuboisRestauration,
+		hash: "LNB:phIUo#IU00WBoKay~qj[t6of",
+	},
+	{
 		title: "Pinheiro Bat - Plombier Sartrouville",
 		description:
-			"Pinheiro Bat delivers expert plumbing and heating services in the Sartrouville area. The website features responsive design, clear service listings, and easy-to-access contact information for all local plumbing needs.",
+			"Responsive business website for a local plumbing and heating company in Sartrouville. Features clear service listings, quick contact access, and an optimized mobile-friendly design focused on local SEO visibility.",
 		link: "http://pinheiro-bat-plombier-sartrouville.com/",
 		image: PinheiroBat,
 		hash: "LFP7b1^%={o}?GsnV[M|~URjozRk",
@@ -62,7 +71,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "Oummy Diag",
 		description:
-			"Oummy Diag provides professional real estate diagnostic services with a clean, user-friendly website. Visitors can easily access detailed information on all available diagnostics and related procedures.",
+			"Professional website for a certified real estate diagnostics company. Built with a clean, accessible interface that clearly presents all diagnostic services, booking details, and compliance information.",
 		link: "https://oummy-diag.fr/",
 		image: OummyDiag,
 		hash: "LeKLK@4n-pIUNHWBWBfk~p%LWBoz",
@@ -70,7 +79,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "MLA Nettoyage",
 		description:
-			"MLA Nettoyage offers professional cleaning services for residential and commercial properties. The modern website presents detailed service information and highlights the company's commitment to quality and reliability.",
+			"Modern, mobile-responsive website for a professional cleaning company serving residential and commercial clients. Highlights service quality, reliability, and detailed offerings through a structured, SEO-friendly layout.",
 		link: "https://mla-nettoyage.fr/",
 		image: MLA,
 		hash: "LEIPFnD$?b9Y=~j]kBj[~XofayoL",
@@ -78,7 +87,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "Net23",
 		description:
-			"Net23 specializes in technology and networking solutions, providing IT support and comprehensive network services. The website features a professional layout and thorough information on all services offered.",
+			"Corporate website for an IT and networking solutions provider. Developed with a focus on clarity and professionalism, showcasing service details, technical expertise, and contact accessibility for business clients.",
 		link: "https://net23.fr/",
 		image: Net23,
 		hash: "LHCICG9b?G9c}$j[bIsl~UbcjYs+",
@@ -86,7 +95,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "Martin Paysage",
 		description:
-			"Martin Paysage delivers expert landscaping and garden design services. The website showcases stunning imagery and detailed descriptions, highlighting the company’s creative approach to outdoor spaces.",
+			"Elegant portfolio website for a landscape design and garden architecture company. Combines high-quality visuals with concise service descriptions to reflect the brand’s creative craftsmanship and attention to detail.",
 		link: "https://martin-paysage.fr/",
 		image: MartinPaysage,
 		hash: "LYCG#%buWBj[_NayWBj[_3azt7j[",
@@ -94,7 +103,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "Loudia Propreté",
 		description:
-			"Loudia Propreté provides professional cleaning and hygiene services across multiple industries. The website combines modern design with clear, comprehensive information about all cleaning solutions offered.",
+			"Professional website for a multi-sector cleaning and hygiene services provider. Features a modern design, intuitive navigation, and SEO-optimized structure for enhanced discoverability and client engagement.",
 		link: "https://loudia-proprete.fr/",
 		image: LoudiaPropreté,
 		hash: "LHC8qo9c?G9c}$j?flsl~Ufln}s+",
@@ -102,7 +111,7 @@ const clientSites: ProjectType[] = [
 	{
 		title: "Packease.shop",
 		description:
-			"An E-commerce website dedicated to selling travel bags, featuring a user-friendly interface and robust payment solutions. Built with ReactJS, Node.js, Stripe, and MongoDB and TypeScript. Attracted over 2000 unique visitors.",
+			"E-commerce platform for travel bags, offering a modern UI and secure payment system. Built with ReactJS, Node.js, TypeScript, Stripe, and MongoDB. Reached over 2,000 unique visitors, showcasing strong engagement and performance.",
 		link: "http://packease.hassenbenhadjhassen.com/",
 		image: Packease,
 		hash: "LMOw,5uNayd=xwRPWBoy.TiwWVb^",
