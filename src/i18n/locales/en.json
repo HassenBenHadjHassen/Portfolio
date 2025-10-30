@@ -101,7 +101,9 @@
 			"title": "Ready to work together?",
 			"subtitle": "Download my resume to learn more about my experience and skills",
 			"getInTouch": "Get in Touch"
-		}
+		},
+		"mobileDownloadTitle": "Get My Resume",
+		"mobileDownloadSubtitle": "Download my resume or get in touch!"
 	},
 	"footer": {
 		"developedBy": "Developed by Hassen Ben Hadj Hassen",

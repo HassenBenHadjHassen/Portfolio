@@ -261,9 +261,7 @@ function Resume() {
 							transition={{ duration: 0.8, delay: 1.4 }}
 						>
 							{isMobile && (
-								<div
-								className="mobile-download-hero"
-								>
+								<div className="mobile-download-hero">
 									<AiOutlineDownload className="hero-download-icon" />
 									<div className="hero-download-title">
 										{t("resume.mobileDownloadTitle", "Get My Resume")}

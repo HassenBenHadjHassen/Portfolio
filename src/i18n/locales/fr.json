@@ -101,7 +101,9 @@
 			"title": "Prêt à travailler ensemble ?",
 			"subtitle": "Téléchargez mon CV pour en savoir plus sur mon expérience et mes compétences",
 			"getInTouch": "Entrer en Contact"
-		}
+		},
+		"mobileDownloadTitle": "Obtenir mon CV",
+		"mobileDownloadSubtitle": "Téléchargez mon CV ou contactez-moi!"
 	},
 	"footer": {
 		"developedBy": "Développé par Hassen Ben Hadj Hassen",
