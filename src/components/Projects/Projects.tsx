@@ -56,7 +56,7 @@ const clientSites: ProjectType[] = [
 		title: "DUBOIS RESTAURATION",
 		description:
 			"Fully responsive corporate website for Dubois Restauration, crafted with WordPress, Elementor, PHP, and MySQL. Deployed via Docker and Nginx with SSL, SEO optimization, image compression, and GDPR-compliant contact forms for a secure and high-performing user experience.",
-		link: "https://dubois-restauration.hassenbenhadjhassen.com/",
+		link: "https://restaurateur-ebenisterie-bronze-pendule.fr/",
 		image: DuboisRestauration,
 		hash: "LNB:phIUo#IU00WBoKay~qj[t6of",
 	},
