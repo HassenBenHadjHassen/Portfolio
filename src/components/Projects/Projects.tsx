@@ -16,7 +16,6 @@ import DuboisRestauration from "../../assets/Projects/dubois-restauration.jpg";
 import PinheiroBat from "../../assets/Projects/pinheiro.png";
 import OummyDiag from "../../assets/Projects/oummy.png";
 import MLA from "../../assets/Projects/mla.png";
-// import Net23 from "../../assets/Projects/net23.png";
 import MartinPaysage from "../../assets/Projects/martin.png";
 import LoudiaPropreté from "../../assets/Projects/loudia.png";
 
@@ -40,7 +39,7 @@ const clientSites: ProjectType[] = [
 		title: "GPI (Police Global Indicators)",
 		description:
 			"A high-performance data visualization platform built for the 2024 Police World Summit in Dubai. Commissioned by Dubai Police to display global indicators through advanced geospatial mapping. Developed with ReactJS, TypeScript, and Leaflet, and styled using Styled Components for a polished, interactive experience.",
-		link: "https://gpsi.hassenbenhadjhassen.com/",
+		link: "https://gpsi-staging.inrits.tech/",
 		image: GPI,
 		hash: "L77-TINM0U~9-y9u9I=@bwf+%0$j",
 	},
@@ -53,9 +52,9 @@ const clientSites: ProjectType[] = [
 		hash: "LiO3^Uxu?b9F~Toft7oI9IRjIUt8",
 	},
 	{
-		title: "DUBOIS RESTAURATION",
+		title: "RESTAURATEUR EBENISTERIE BRONZES & PENDULE",
 		description:
-			"Fully responsive corporate website for Dubois Restauration, crafted with WordPress, Elementor, PHP, and MySQL. Deployed via Docker and Nginx with SSL, SEO optimization, image compression, and GDPR-compliant contact forms for a secure and high-performing user experience.",
+			"Fully responsive corporate website for RESTAURATEUR EBENISTERIE BRONZES & PENDULE, crafted with WordPress, Elementor, PHP, and MySQL. Deployed via Docker and Nginx with SSL, SEO optimization, image compression, and GDPR-compliant contact forms for a secure and high-performing user experience.",
 		link: "https://restaurateur-ebenisterie-bronze-pendule.fr/",
 		image: DuboisRestauration,
 		hash: "LNB:phIUo#IU00WBoKay~qj[t6of",

@@ -14,7 +14,6 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
 	title,
 	description,
-	keywords = "full stack developer, react developer, node.js developer, web developer, portfolio, javascript, typescript, frontend developer, backend developer, software engineer, hassen ben hadj hassen",
 	canonical = "https://hassenbenhadjhassen.com",
 	ogImage = "https://hassenbenhadjhassen.com/portfolio.png",
 	ogType = "website",
@@ -29,7 +28,6 @@ const SEO: React.FC<SEOProps> = ({
 			{/* Basic Meta Tags */}
 			<title>{fullTitle}</title>
 			<meta name="description" content={description} />
-			<meta name="keywords" content={keywords} />
 			<link rel="canonical" href={canonical} />
 
 			{/* Open Graph Tags */}

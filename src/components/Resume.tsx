@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {
 	AiOutlineDownload,
@@ -15,7 +15,8 @@ import PdfComp from "./PdfComp";
 import { useEffect, useState } from "react";
 import SEO from "./SEO/SEO";
 
-import pdf from "../assets/Hassen_Ben_Hadj_Hassen_Resume.pdf";
+import pdfEn from "../assets/Hassen_Ben_Hadj_Hassen_Resume.pdf";
+import pdfFr from "../assets/Hassen_Ben_Hadj_Hassen_Resume_FR.pdf";
 
 const workerUrl = `https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`;
 
@@ -23,6 +24,7 @@ function Resume() {
 	const { t } = useTranslation();
 	const navigate = useNavigate();
 	const [isMobile, setIsMobile] = useState(false);
+	const [selectedLang, setSelectedLang] = useState("en");
 
 	useEffect(() => {
 		const checkMobile = () => {
@@ -81,7 +83,6 @@ function Resume() {
 			<SEO
 				title="Resume & CV - Hassen Ben Hadj Hassen | Full Stack Developer"
 				description="Download the resume and CV of Hassen Ben Hadj Hassen, Full Stack Developer specializing in React, Node.js, TypeScript, and modern web development technologies. View my professional experience and skills."
-				keywords="hassen ben hadj hassen resume, full stack developer cv, react developer resume, node.js developer cv, web developer resume, software engineer cv, typescript developer resume, javascript developer cv"
 				canonical="https://hassenbenhadjhassen.com/resume"
 				structuredData={resumeStructuredData}
 			/>
@@ -232,7 +233,20 @@ function Resume() {
 				{/* PDF Viewer Section */}
 				{!isMobile && (
 					<Row className="justify-content-center">
+						<Col md={12} className="text-center mb-4">
+							<Tabs
+								id="resume-tabs"
+								activeKey={selectedLang}
+								onSelect={(k) => setSelectedLang(k || "en")}
+								className="justify-content-center resume-tabs"
+								style={{ borderBottom: "none" }}
+							>
+								<Tab eventKey="en" title="English" />
+								<Tab eventKey="fr" title="Français" />
+							</Tabs>
+						</Col>
 						<motion.div
+							key={selectedLang}
 							className="pdf-container"
 							initial={{ opacity: 0, y: 50, scale: 0.9 }}
 							animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -243,7 +257,7 @@ function Resume() {
 							}}
 						>
 							<PdfComp
-								pdfFile={pdf}
+								pdfFile={selectedLang === "en" ? pdfEn : pdfFr}
 								isMobile={isMobile}
 								workerUrl={workerUrl}
 							/>
@@ -272,6 +286,18 @@ function Resume() {
 											"Download my resume or get in touch!"
 										)}
 									</div>
+									<div className="mt-4 mb-2">
+										<Tabs
+											id="resume-mobile-tabs"
+											activeKey={selectedLang}
+											onSelect={(k) => setSelectedLang(k || "en")}
+											className="justify-content-center resume-tabs"
+											style={{ borderBottom: "none" }}
+										>
+											<Tab eventKey="en" title="English" />
+											<Tab eventKey="fr" title="Français" />
+										</Tabs>
+									</div>
 								</div>
 							)}
 							<h3 className="download-title">
@@ -287,12 +313,15 @@ function Resume() {
 							>
 								<Button
 									variant="primary"
-									href={pdf}
+									href={selectedLang === "en" ? pdfEn : pdfFr}
 									target="_blank"
 									className="download-cv-btn primary"
 								>
 									<AiOutlineDownload />
-									<span className="ms-2">{t("resume.download")}</span>
+									<span className="ms-2">
+										{t("resume.download")} (
+										{selectedLang === "en" ? "EN" : "FR"})
+									</span>
 								</Button>
 								<Button
 									variant="outline-light"
