@@ -103,7 +103,7 @@ function NavBar() {
 								>
 									<Nav.Link
 										as={Link}
-										to="/project"
+										to="/projects"
 										onClick={() => setExpand(false)}
 									>
 										<AiOutlineFundProjectionScreen

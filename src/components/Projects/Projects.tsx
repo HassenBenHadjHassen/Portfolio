@@ -156,7 +156,7 @@ function Projects() {
 		name: "Hassen Ben Hadj Hassen - Portfolio Projects",
 		description:
 			"Full Stack Developer Portfolio showcasing React.js, Node.js, and TypeScript projects including client websites, e-commerce platforms, and innovative web applications.",
-		url: "https://hassenbenhadjhassen.com/project",
+		url: "https://hassenbenhadjhassen.com/projects",
 		mainEntity: {
 			"@type": "ItemList",
 			name: "Portfolio Projects",
@@ -191,7 +191,7 @@ function Projects() {
 				title="Portfolio Projects - Hassen Ben Hadj Hassen | React & Node.js Developer"
 				description="View my Full Stack Developer portfolio featuring React.js, Node.js, and TypeScript projects. Client websites, e-commerce platforms, and innovative web applications showcasing my development expertise."
 				keywords="portfolio projects, react projects, node.js projects, web development portfolio, full stack developer projects, javascript projects, typescript projects, client websites, e-commerce development, hassen ben hadj hassen portfolio"
-				canonical="https://hassenbenhadjhassen.com/project"
+				canonical="https://hassenbenhadjhassen.com/projects"
 				structuredData={projectsStructuredData}
 			/>
 			<Particle />
