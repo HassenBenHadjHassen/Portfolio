@@ -19,46 +19,30 @@ const SEO: React.FC<SEOProps> = ({
 	ogType = "website",
 	structuredData,
 }) => {
-	const fullTitle = title.includes("Hassen Ben Hadj Hassen")
-		? title
-		: `${title} | Hassen Ben Hadj Hassen - Full Stack Developer`;
-
 	return (
 		<Helmet>
 			{/* Basic Meta Tags */}
-			<title>{fullTitle}</title>
+			<title>{title}</title>
 			<meta name="description" content={description} />
 			<link rel="canonical" href={canonical} />
 
 			{/* Open Graph Tags */}
-			<meta property="og:title" content={fullTitle} />
+			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={ogImage} />
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
-			<meta
-				property="og:image:alt"
-				content={`${title} - Hassen Ben Hadj Hassen Portfolio`}
-			/>
 			<meta property="og:url" content={canonical} />
 			<meta property="og:type" content={ogType} />
-			<meta
-				property="og:site_name"
-				content="Hassen Ben Hadj Hassen Portfolio"
-			/>
-			<meta property="og:locale" content="en_US" />
+			<meta property="og:site_name" content={title} />
 
 			{/* Twitter Tags */}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="@hassenbenhadj" />
 			<meta name="twitter:creator" content="@hassenbenhadj" />
-			<meta name="twitter:title" content={fullTitle} />
+			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={ogImage} />
-			<meta
-				name="twitter:image:alt"
-				content={`${title} - Hassen Ben Hadj Hassen Portfolio`}
-			/>
 
 			{/* Additional SEO Tags */}
 			<meta

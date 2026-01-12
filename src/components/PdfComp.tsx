@@ -1,6 +1,5 @@
-import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "@react-pdf-viewer/core/lib/styles/index.css";
 
 interface PdfCompProps {
 	readonly workerUrl: string;
@@ -9,6 +8,28 @@ interface PdfCompProps {
 }
 
 function PdfComp({ workerUrl, pdfFile, isMobile }: PdfCompProps) {
+	const [pdfComponents, setPdfComponents] = useState<{
+		Viewer: any;
+		Worker: any;
+	} | null>(null);
+
+	useEffect(() => {
+		const loadPdfComponents = async () => {
+			try {
+				const module = await import("@react-pdf-viewer/core");
+				await import("@react-pdf-viewer/core/lib/styles/index.css");
+				setPdfComponents({
+					Viewer: module.Viewer,
+					Worker: module.Worker,
+				});
+			} catch (error) {
+				console.error("Failed to load PDF viewer:", error);
+			}
+		};
+
+		loadPdfComponents();
+	}, []);
+
 	return (
 		<motion.div
 			className="pdf-file"
@@ -17,17 +38,19 @@ function PdfComp({ workerUrl, pdfFile, isMobile }: PdfCompProps) {
 			transition={{ duration: 0.6, delay: 0.2 }}
 		>
 			<div className="pdf-viewer-wrapper">
-				<Worker workerUrl={workerUrl}>
-					{pdfFile && (
-						<Viewer
-							fileUrl={pdfFile}
-							defaultScale={!isMobile ? 1 : 0.8}
-							theme={{
-								theme: "dark",
-							}}
-						/>
-					)}
-				</Worker>
+				{pdfComponents && (
+					<pdfComponents.Worker workerUrl={workerUrl}>
+						{pdfFile && (
+							<pdfComponents.Viewer
+								fileUrl={pdfFile}
+								defaultScale={!isMobile ? 1 : 0.8}
+								theme={{
+									theme: "dark",
+								}}
+							/>
+						)}
+					</pdfComponents.Worker>
+				)}
 			</div>
 		</motion.div>
 	);

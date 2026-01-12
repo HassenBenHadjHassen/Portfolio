@@ -15,10 +15,6 @@ html {
 }
 
 /* Performance optimizations for animations */
-* {
-	will-change: auto;
-}
-
 .animated-element {
 	will-change: transform, opacity;
 }

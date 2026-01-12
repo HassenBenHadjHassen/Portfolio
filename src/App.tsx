@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Routes,
-	Navigate,
-	useLocation,
-} from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 import "./style.css";
@@ -37,7 +31,7 @@ function AppContent() {
 				>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/project" element={<Projects />} />
+						<Route path="/projects" element={<Projects />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/resume" element={<Resume />} />
 						<Route path="/sitemap.xml" element={null} />
@@ -55,9 +49,7 @@ function App() {
 	const [load, setLoad] = useState(true);
 
 	useEffect(() => {
-		const handleLoad = () => {
-			setLoad(false);
-		};
+		const handleLoad = () => setLoad(false);
 
 		if (document.readyState === "complete") {
 			handleLoad();
@@ -65,15 +57,10 @@ function App() {
 			window.addEventListener("load", handleLoad);
 		}
 
-		// Fail-safe to set load to false after 1.5 seconds
 		const timeout = setTimeout(() => {
-			if (load) {
-				console.log("Load timed out, setting to false");
-				setLoad(false);
-			}
+			if (load) setLoad(false);
 		}, 1500);
 
-		// Cleanup the event listener and timeout
 		return () => {
 			window.removeEventListener("load", handleLoad);
 			clearTimeout(timeout);
@@ -81,12 +68,12 @@ function App() {
 	}, [load]);
 
 	return (
-		<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+		<>
 			<Preloader load={load} />
 			<div id={load ? "no-scroll" : "scroll"}>
 				<AppContent />
 			</div>
-		</Router>
+		</>
 	);
 }
 

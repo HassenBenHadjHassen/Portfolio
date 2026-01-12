@@ -15,7 +15,7 @@ function Home2() {
 			<Container>
 				<Row>
 					<Col md={8} className="home-about-description">
-						<h1 style={{ fontSize: "2.6em" }}>
+						<h2 style={{ fontSize: "2.6em" }}>
 							{t("home.introduction.title")
 								.split(" ")
 								.map((word, index) =>
@@ -28,7 +28,7 @@ function Home2() {
 										`${word} `
 									)
 								)}
-						</h1>
+						</h2>
 						<div className="home-about-body">
 							<p>
 								{t("home.introduction.description.intro")
@@ -151,13 +151,13 @@ function Home2() {
 					</Col>
 					<Col md={4} className="myAvtar d-flex justify-content-center">
 						<Tilt>
-							<img src={Avatar} className="img-fluid" alt="avatar" />
+							<img src={Avatar} className="img-fluid" alt="Hassen Ben Hadj Hassen avatar" />
 						</Tilt>
 					</Col>
 				</Row>
 				<Row>
 					<Col md={12} className="home-about-social">
-						<h1>{t("home.introduction.findMe")}</h1>
+						<h2>{t("home.introduction.findMe")}</h2>
 						<p>
 							{t("home.introduction.connect")
 								.split(" ")

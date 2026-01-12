@@ -11,12 +11,14 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Particle from "./Particle";
-import PdfComp from "./PdfComp";
-import { useEffect, useState } from "react";
+// import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import SEO from "./SEO/SEO";
 
 import pdfEn from "../assets/Hassen_Ben_Hadj_Hassen_Resume.pdf";
 import pdfFr from "../assets/Hassen_Ben_Hadj_Hassen_Resume_FR.pdf";
+
+const PdfComp = lazy(() => import("./PdfComp"));
 
 const workerUrl = `https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`;
 
@@ -256,11 +258,17 @@ function Resume() {
 								transition: { duration: 0.3 },
 							}}
 						>
-							<PdfComp
-								pdfFile={selectedLang === "en" ? pdfEn : pdfFr}
-								isMobile={isMobile}
-								workerUrl={workerUrl}
-							/>
+							<Suspense
+								fallback={
+									<div className="text-center p-5">Loading PDF Viewer...</div>
+								}
+							>
+								<PdfComp
+									pdfFile={selectedLang === "en" ? pdfEn : pdfFr}
+									isMobile={isMobile}
+									workerUrl={workerUrl}
+								/>
+							</Suspense>
 						</motion.div>
 					</Row>
 				)}

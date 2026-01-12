@@ -217,7 +217,7 @@ function ContactForm() {
 			<Container>
 				<Row>
 					<Col md={12} className="home-about-description">
-						<h1 style={{ fontSize: "2.6em" }}>
+						<h2 style={{ fontSize: "2.6em" }}>
 							{t("contact.title")
 								.split(" ")
 								.map((word, index) =>
@@ -230,7 +230,7 @@ function ContactForm() {
 										`${word} `
 									)
 								)}
-						</h1>
+						</h2>
 
 						{error && (
 							<Alert

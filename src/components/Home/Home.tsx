@@ -15,25 +15,24 @@ function Home() {
 	const homeStructuredData = {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
-		name: "Hassen Ben Hadj Hassen - Full Stack Developer",
+		name: "Full Stack Developer | React & Node.js Expert – Hassen Ben Hadj Hassen",
 		description:
-			"Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio of client projects and personal applications.",
+			"Full Stack Developer specializing in React and Node.js. View real-world projects, skills, and experience by Hassen Ben Hadj Hassen.",
 		url: "https://hassenbenhadjhassen.com",
 		mainEntity: {
 			"@type": "Person",
 			name: "Hassen Ben Hadj Hassen",
 			jobTitle: "Full Stack Developer",
 			description:
-				"Experienced Full Stack Developer with expertise in React.js, Node.js, TypeScript, and modern web development technologies.",
+				"Full Stack Developer specializing in React and Node.js. View real-world projects, skills, and experience by Hassen Ben Hadj Hassen.",
 		},
 	};
 
 	return (
 		<section>
 			<SEO
-				title="Hassen Ben Hadj Hassen - Full Stack Developer | React & Node.js Specialist"
-				description="Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio of client projects and personal applications. Expert in JavaScript, TypeScript, and scalable web development."
-				keywords="full stack developer, react developer, node.js developer, web developer, portfolio, javascript, typescript, frontend developer, backend developer, software engineer, hassen ben hadj hassen, react specialist, node.js expert"
+				title="Full Stack Developer | React & Node.js Expert – Hassen Ben Hadj Hassen"
+				description="Full Stack Developer specializing in React and Node.js. View real-world projects, skills, and experience by Hassen Ben Hadj Hassen."
 				canonical="https://hassenbenhadjhassen.com"
 				structuredData={homeStructuredData}
 			/>
@@ -55,7 +54,7 @@ function Home() {
 								</span>
 							</motion.h1>
 
-							<motion.h1
+							<motion.h2
 								className="heading-name"
 								initial={{ opacity: 0, y: 50 }}
 								animate={{ opacity: 1, y: 0 }}
@@ -63,7 +62,7 @@ function Home() {
 							>
 								{t("home.name")}
 								<strong className="main-name"> {t("home.fullName")}</strong>
-							</motion.h1>
+							</motion.h2>
 
 							<motion.div
 								style={{ textAlign: "left" }}
@@ -78,7 +77,7 @@ function Home() {
 						<Col md={5} style={{ paddingBottom: 20 }}>
 							<motion.img
 								src={HomeImage}
-								alt="home pic"
+								alt="Hassen Ben Hadj Hassen Full Stack Developer illustration"
 								className="img-fluid"
 								style={{ maxHeight: "450px" }}
 								initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
