@@ -12,7 +12,7 @@ function ProjectCard(
 		ghLink?: string;
 		demoLink: string;
 		hash: string;
-	}>
+	}>,
 ) {
 	return (
 		<Card className="project-card-view">
@@ -24,7 +24,12 @@ function ProjectCard(
 					{props.description}
 				</Card.Text>
 				{props.ghLink && (
-					<Button variant="primary" href={props.ghLink} target="_blank">
+					<Button
+						variant="primary"
+						href={props.ghLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<BsGithub /> &nbsp; Github
 					</Button>
 				)}
@@ -33,6 +38,7 @@ function ProjectCard(
 						variant="primary"
 						href={props.demoLink}
 						target="_blank"
+						rel="noopener noreferrer"
 						style={{ marginLeft: props.ghLink ? "10px" : "0" }}
 					>
 						<CgWebsite /> &nbsp; Demo
