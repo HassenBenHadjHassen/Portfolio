@@ -11,6 +11,7 @@ const currentDir = path.dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: "/",
 	plugins: [
 		ViteImageOptimizer(),
 		react(),

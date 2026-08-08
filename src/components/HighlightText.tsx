@@ -10,6 +10,9 @@ interface HighlightTextProps {
 }
 
 function HighlightText({ text, highlights }: HighlightTextProps) {
+	if (!text || typeof text !== "string") {
+		return <>{text || ""}</>;
+	}
 	// Split by spaces, retaining words
 	const words = text.split(" ");
 
