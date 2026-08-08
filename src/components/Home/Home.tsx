@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -8,10 +8,8 @@ import { CiMail } from "react-icons/ci";
 import Type from "./Type";
 import Particle from "../Particle";
 import HomeImage from "../../assets/home-main.svg";
-import FallBack from "../FallBack";
 import SEO from "../SEO/SEO";
-
-const Home2 = React.lazy(() => import("./Home2"));
+import Home2 from "./Home2";
 
 function Home() {
 	const { t } = useTranslation();
@@ -170,9 +168,7 @@ function Home() {
 					</Row>
 				</Container>
 			</Container>
-			<Suspense fallback={<FallBack />}>
-				<Home2 />
-			</Suspense>
+			<Home2 />
 		</section>
 	);
 }

@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,9 +19,7 @@ import ToumisCatering from "../../assets/Projects/toumis.webp";
 import Nop from "../../assets/Projects/nop.webp";
 import ServicesPlus from "../../assets/Projects/services-plus.webp";
 
-import FallBack from "../FallBack";
-
-const ProjectCard = React.lazy(() => import("./ProjectCard"));
+import ProjectCard from "./ProjectCard";
 
 interface ProjectType {
 	title: string;
@@ -317,16 +315,14 @@ function Projects() {
 									}}
 									style={{ height: "100%" }}
 								>
-									<Suspense fallback={<FallBack />}>
-										<ProjectCard
-											imgPath={project.image}
-											title={project.title}
-											description={project.description}
-											ghLink={project.githubLink}
-											demoLink={project.link}
-											hash={project.hash}
-										/>
-									</Suspense>
+									<ProjectCard
+										imgPath={project.image}
+										title={project.title}
+										description={project.description}
+										ghLink={project.githubLink}
+										demoLink={project.link}
+										hash={project.hash}
+									/>
 								</motion.div>
 							</Col>
 						))}

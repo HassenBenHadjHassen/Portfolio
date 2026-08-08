@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -6,10 +5,8 @@ import Particle from "../Particle";
 import Techstack from "./Techstack";
 import AboutCard from "./AboutCard";
 import AboutImage from "../../assets/about.png";
-import FallBack from "../FallBack";
 import SEO from "../SEO/SEO";
-
-const GitHub = React.lazy(() => import("./Github"));
+import GitHub from "./Github";
 
 function About() {
 	const { t } = useTranslation();
@@ -172,9 +169,7 @@ function About() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 1.0 }}
 				>
-					<Suspense fallback={<FallBack />}>
-						<GitHub />
-					</Suspense>
+					<GitHub />
 				</motion.div>
 			</Container>
 		</Container>
