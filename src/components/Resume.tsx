@@ -21,10 +21,14 @@ import pdfFr from "../assets/Hassen_Ben_Hadj_Hassen_Resume_FR.pdf";
 function Resume() {
 	const { t, i18n } = useTranslation();
 	const navigate = useNavigate();
-	const [selectedLang, setSelectedLang] = useState(i18n.language.startsWith("fr") ? "fr" : "en");
+	const [selectedLang, setSelectedLang] = useState(
+		i18n.language && i18n.language.startsWith("fr") ? "fr" : "en"
+	);
 
 	useEffect(() => {
-		setSelectedLang(i18n.language.startsWith("fr") ? "fr" : "en");
+		if (i18n.language) {
+			setSelectedLang(i18n.language.startsWith("fr") ? "fr" : "en");
+		}
 	}, [i18n.language]);
 
 	const resumeStructuredData = {
