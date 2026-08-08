@@ -102,23 +102,23 @@ function About() {
 						}}
 					>
 						<motion.img
-							src={AboutImage}
-							alt="about"
-							className="img-fluid"
-							style={{
-								maxWidth: "300px",
-								height: "auto",
-								width: "100%",
-							}}
-							initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
-							animate={{ opacity: 1, scale: 1, rotate: 0 }}
-							transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-							whileHover={{
-								scale: 1.05,
-								rotate: -2,
-								transition: { duration: 0.3 },
-							}}
-						/>
+						src={AboutImage}
+						alt="Hassen Ben Hadj Hassen – Full Stack Developer"
+						className="img-fluid"
+						style={{
+							maxWidth: "300px",
+							height: "auto",
+							width: "100%",
+						}}
+						initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+						animate={{ opacity: 1, scale: 1, rotate: 0 }}
+						transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+						whileHover={{
+							scale: 1.05,
+							rotate: -2,
+							transition: { duration: 0.3 },
+						}}
+					/>
 					</Col>
 				</Row>
 				<motion.div
@@ -127,7 +127,8 @@ function About() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.6 }}
 				>
-					<h1
+					{/* h2 — only one h1 allowed per page (the About Me heading above) */}
+					<h2
 						className="project-heading"
 						style={{
 							fontSize: "1.8em",
@@ -154,7 +155,7 @@ function About() {
 									`${word} `
 								);
 							})}
-					</h1>
+					</h2>
 				</motion.div>
 
 				<motion.div

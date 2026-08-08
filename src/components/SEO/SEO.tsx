@@ -34,7 +34,7 @@ const SEO: React.FC<SEOProps> = ({
 			<meta property="og:image:height" content="630" />
 			<meta property="og:url" content={canonical} />
 			<meta property="og:type" content={ogType} />
-			<meta property="og:site_name" content={title} />
+			<meta property="og:site_name" content="Hassen Ben Hadj Hassen Portfolio" />
 
 			{/* Twitter Tags */}
 			<meta name="twitter:card" content="summary_large_image" />

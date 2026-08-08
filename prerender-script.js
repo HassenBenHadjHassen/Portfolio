@@ -10,10 +10,10 @@ const toAbsolute = (p) => path.resolve(__dirname, p);
 const routesToPrerender = ["/", "/projects", "/about", "/resume"];
 
 const template = fs.readFileSync(toAbsolute("dist/index.html"), "utf-8");
-const render = (await import("./dist/server/prerender.js")).render;
+const prerender = (await import("./dist/server/prerender.js")).prerender;
 
 for (const url of routesToPrerender) {
-	const appHtml = render(url);
+	const appHtml = prerender(url);
 
 	const html = template.replace(`<!--app-html-->`, appHtml); // Assuming placeholder exists or we inject into root
 

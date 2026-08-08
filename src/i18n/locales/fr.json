@@ -9,6 +9,11 @@
 		"greeting": "Salut !",
 		"name": "JE SUIS",
 		"fullName": "HASSEN BEN HADJ HASSEN",
+		"status": "Disponible pour des opportunités",
+		"cta": {
+			"viewWork": "Voir Mon Travail",
+			"getInTouch": "Me Contacter"
+		},
 		"typewriter": {
 			"line1": "Développeur Full Stack",
 			"line2": "Création d’applications web modernes",
@@ -33,7 +38,7 @@
 		"skills": "Compétences",
 		"technologies": "Technologies",
 		"skillset": "Compétences Professionnelles",
-		"personalDescription": "Salut, je suis Hassen Ben Hadj Hassen, un développeur de logiciels passionné avec plus de 3 ans d'expérience spécialisé dans les technologies web modernes. J'excelle dans la création d'applications évolutives et performantes utilisant React, Node.js, et les technologies cloud. Mon expertise couvre le développement full-stack, avec un focus sur la création d'expériences utilisateur intuitives et de systèmes backend robustes. Je m'engage à écrire du code propre et maintenable et à rester à jour avec les meilleures pratiques de l'industrie. Quand je ne code pas, j'aime :",
+		"personalDescription": "Salut, je suis Hassen Ben Hadj Hassen, un développeur de logiciels passionné avec plus de 3 ans d'expérience spécialisé dans les technologies web modernes. Basé en France et ouvert aux opportunités en local ou à distance (télétravail), j'excelle dans la création d'applications évolutives et performantes utilisant React, Node.js, et les technologies cloud. Mon expertise couvre le développement full-stack, avec un focus sur la création d'expériences utilisateur intuitives et de systèmes backend robustes. Je m'engage à écrire du code propre et maintenable et à rester à jour avec les meilleures pratiques de l'industrie. Quand je ne code pas, j'aime :",
 		"activities": {
 			"exploring": "Explorer des technologies de pointe et des frameworks",
 			"contributing": "Contribuer à des projets open-source et aux communautés de développeurs",
@@ -47,7 +52,53 @@
 		"viewProject": "Voir le projet",
 		"viewCode": "Voir le code",
 		"clientProjects": "Projets Clients",
-		"personalProjects": "Projets Personnels"
+		"personalProjects": "Projets Personnels",
+		"category": "Catégorie :",
+		"techStack": "Technologies :",
+		"all": "Tous",
+		"client": "Projets Clients",
+		"personal": "Projets Personnels",
+		"fun": "Jeux & Fun",
+		"allTech": "Toutes Tech",
+		"noMatches": "Aucun projet ne correspond aux filtres sélectionnés.",
+		"items": {
+			"gpi": {
+				"desc": "Commandé par la police de Dubaï pour le Sommet mondial de la police 2024 afin d'afficher des indicateurs de sécurité internationaux. Développement d'une plateforme interactive de géo-visualisation haute performance affichant des indicateurs dynamiques sur des cartes SIG globales. Conçu avec React, TypeScript, des couches de cartes Leaflet, des couches géo-JSON personnalisées et optimisé pour le rendu des données côté client en temps réel. Comprend un portail client sécurisé et des indicateurs de tableau de bord personnalisables, avec des temps de chargement de carte inférieurs à la seconde sous charge."
+			},
+			"packease": {
+				"desc": "Plateforme e-commerce de sacs de voyage, offrant une interface utilisateur moderne et un système de paiement sécurisé. Conçu avec ReactJS, Node.js, TypeScript, Stripe et MongoDB. Plus de 2 000 visiteurs uniques, démontrant un fort engagement et de bonnes performances."
+			},
+			"cardiopro": {
+				"desc": "Site officiel d'un leader français des défibrillateurs (DAE), proposant vente, location, support technique et formation au RCP. Conçu avec Laravel et Symfony pour une gestion backend robuste, et optimisé pour le SEO et la performance, se classant dans le top 5 des résultats Google dans sa catégorie."
+			},
+			"restaurateur": {
+				"desc": "Site d'entreprise entièrement responsive pour RESTAURATEUR ÉBÉNISTERIE BRONZES & PENDULE, conçu avec WordPress, Elementor, PHP et MySQL. Déployé via Docker et Nginx avec SSL, optimisation SEO, compression d'images et formulaires de contact conformes au RGPD."
+			},
+			"smoothScroll": {
+				"desc": "Un package NPM open-source qui ajoute un défilement fluide aux projets React, permettant aux développeurs de créer des interfaces intuitives. Implémenté avec ReactJS et TypeScript, avec plus de 600 téléchargements sur NPM."
+			},
+			"secureChat": {
+				"desc": "Une plateforme de messagerie axée sur la confidentialité, inspirée de Messenger, garantissant une communication sécurisée grâce au chiffrement de bout en bout. Conçue avec ReactJS, NodeJS et Socket.IO."
+			},
+			"nop": {
+				"desc": "Site web pour un fournisseur multisectoriel de services de nettoyage et d'hygiène à Aix-en-Provence. Présente un design moderne, une navigation intuitive et une structure optimisée pour le SEO."
+			},
+			"oummy": {
+				"desc": "Site professionnel pour une entreprise certifiée de diagnostics immobiliers. Conçu avec une interface propre et accessible qui présente clairement tous les services de diagnostic, les détails de réservation et les informations de conformité."
+			},
+			"toumis": {
+				"desc": "Site de traiteur événementiel haut de gamme optimisé pour le SEO, spécialisé dans les fruits de mer méditerranéens frais et les buffets sur mesure pour 10 à 1 000 convives. Comprend une présentation interactive des menus et un entonnoir de devis intuitif."
+			},
+			"servicesPlus": {
+				"desc": "Site professionnel pour une entreprise de rénovation de bâtiments et d'efficacité énergétique. Expert en isolation, pompes à chaleur, climatisation et menuiserie — solutions sur mesure pour particuliers et professionnels."
+			},
+			"pinheiro": {
+				"desc": "Site web d'entreprise responsive pour une entreprise locale de plomberie et de chauffage à Sartrouville. Présente des listes de services claires, un accès rapide aux contacts et une structure optimisée pour le SEO local."
+			},
+			"doctorWho2048": {
+				"desc": "Une version créative du jeu classique 2048 pour les fans de Doctor Who, remplaçant les numéros par les incarnations du Docteur. Conçu avec ReactJS et TypeScript."
+			}
+		}
 	},
 	"contact": {
 		"title": "ENTRER EN CONTACT",
@@ -106,15 +157,34 @@
 		"mobileDownloadSubtitle": "Téléchargez mon CV ou contactez-moi!"
 	},
 	"footer": {
-		"developedBy": "Développé par Hassen Ben Hadj Hassen",
-		"rights": "Tous droits réservés.",
-		"madeWith": "Fait avec",
-		"by": "par"
+		"description": "Ingénieur Logiciel Full-Stack spécialisé en React, Node.js et développement SaaS moderne. Création d'architectures numériques hautement performantes.",
+		"servicesTitle": "Services",
+		"services": {
+			"speed": "Optimisation Vitesse",
+			"chatbot": "Chatbots IA & RAG",
+			"saas": "Développement SaaS"
+		},
+		"linksTitle": "Liens",
+		"contactTitle": "Me Contacter",
+		"status": "Disponible pour des opportunités",
+		"rights": "Tous droits réservés. Copyright © {{year}} Hassen Ben Hadj Hassen"
 	},
 	"common": {
 		"loading": "Chargement...",
 		"error": "Erreur",
 		"retry": "Réessayer",
 		"success": "Succès !"
+	},
+	"testimonials": {
+		"title": "Témoignages Clients",
+		"subtitle": "Retours d'expérience de réels propriétaires de projets et responsables techniques",
+		"cardiopro": {
+			"quote": "\"Hassen a livré une plateforme de location et de vente de défibrillateurs extrêmement fiable pour CardioPro. Son expertise en PHP et en logique backend, associée à une excellente optimisation SEO, nous a permis de nous hisser dans le top 5 des classements sur Google. Je recommande vivement ses services de développement !\"",
+			"role": "Directeur Général, CardioPro"
+		},
+		"gpi": {
+			"quote": "\"Travailler avec Hassen sur le portail de géo-visualisation GPI (Indicateurs Globaux de Police) a été une révélation. Les cartes Leaflet dynamiques se chargent instantanément et gèrent de grands ensembles de données géo-JSON avec des temps de réponse inférieurs à la seconde. Professionnel, réactif et techniquement de premier ordre.\"",
+			"role": "Chef de Projet Technique (Sommet 2024)"
+		}
 	}
 }

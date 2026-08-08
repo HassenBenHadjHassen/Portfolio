@@ -54,8 +54,8 @@ function NavBar() {
 			>
 				<Container>
 					<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-						<Navbar.Brand href="/" className="d-flex">
-							<img src={Logo} className="img-fluid logo" alt="brand" />
+						<Navbar.Brand href="/" className="d-flex" aria-label="Go to homepage">
+							<img src={Logo} className="img-fluid logo" alt="Hassen Ben Hadj Hassen logo" />
 						</Navbar.Brand>
 					</motion.div>
 					<Navbar.Toggle
@@ -142,7 +142,9 @@ function NavBar() {
 									<Button
 										href="https://github.com/HassenBenHadjHassen/Portfolio"
 										target="_blank"
+										rel="noopener noreferrer"
 										className="fork-btn-inner"
+										aria-label="Star this portfolio on GitHub"
 									>
 										<CgGitFork style={{ fontSize: "1.2em" }} />{" "}
 										<AiFillStar style={{ fontSize: "1.1em" }} />

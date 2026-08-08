@@ -6,7 +6,8 @@ function Github() {
 		<Container fluid>
 			<Row className="justify-content-center mb-4">
 				<Col xs={12} className="text-center">
-					<h1
+					{/* h2 — About page already has the only h1 */}
+					<h2
 						className="project-heading"
 						style={{
 							fontSize: "1.8em",
@@ -15,7 +16,7 @@ function Github() {
 						}}
 					>
 						Days I <strong className="purple">Code</strong>
-					</h1>
+					</h2>
 				</Col>
 			</Row>
 			<Row className="justify-content-center">

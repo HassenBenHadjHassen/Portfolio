@@ -9,6 +9,11 @@
 		"greeting": "Hi There!",
 		"name": "I'M",
 		"fullName": "HASSEN BEN HADJ HASSEN",
+		"status": "Available for opportunities",
+		"cta": {
+			"viewWork": "View My Work",
+			"getInTouch": "Get In Touch"
+		},
 		"typewriter": {
 			"line1": "Full Stack Web Developer",
 			"line2": "Building Modern Web Applications",
@@ -33,7 +38,7 @@
 		"skills": "Skills",
 		"technologies": "Technologies",
 		"skillset": "Professional Skillset",
-		"personalDescription": "Hi, I'm Hassen Ben Hadj Hassen, a passionate software developer with 3+ years of experience specializing in modern web technologies. I excel at building scalable, high-performance applications using React, Node.js, and cloud technologies. My expertise spans full-stack development, with a focus on creating intuitive user experiences and robust backend systems. I'm committed to writing clean, maintainable code and staying current with industry best practices. When I'm not coding, I enjoy:",
+		"personalDescription": "Hi, I'm Hassen Ben Hadj Hassen, a passionate software developer with 3+ years of experience specializing in modern web technologies. Based in France and available for local or remote opportunities worldwide, I excel at building scalable, high-performance applications using React, Node.js, and cloud technologies. My expertise spans full-stack development, with a focus on creating intuitive user experiences and robust backend systems. I'm committed to writing clean, maintainable code and staying current with industry best practices. When I'm not coding, I enjoy:",
 		"activities": {
 			"exploring": "Exploring cutting-edge technologies and frameworks",
 			"contributing": "Contributing to open-source projects and developer communities",
@@ -47,7 +52,53 @@
 		"viewProject": "View Project",
 		"viewCode": "View Code",
 		"clientProjects": "Client Projects",
-		"personalProjects": "Personal Projects"
+		"personalProjects": "Personal Projects",
+		"category": "Category:",
+		"techStack": "Tech Stack:",
+		"all": "All",
+		"client": "Client Projects",
+		"personal": "Personal Projects",
+		"fun": "Fun & Games",
+		"allTech": "All Tech",
+		"noMatches": "No projects match the selected filters.",
+		"items": {
+			"gpi": {
+				"desc": "Commissioned by Dubai Police for the 2024 Police World Summit to display international police and security metrics. Developed a high-performance interactive geo-visualization platform rendering dynamic indicators across global GIS maps. Engineered using React, TypeScript, Leaflet map layers, custom geo-JSON layers, and optimized for real-time client side data rendering. Included secure client portal and customizable dashboard metrics, achieving sub-second map load times under concurrent presentation loads."
+			},
+			"packease": {
+				"desc": "E-commerce platform for travel bags, offering a modern UI and secure payment system. Built with ReactJS, Node.js, TypeScript, Stripe, and MongoDB. Reached over 2,000 unique visitors, showcasing strong engagement and performance."
+			},
+			"cardiopro": {
+				"desc": "Official website for a leading French provider of defibrillators (DAE), offering sales, rentals, technical support, and CPR training. Built with Laravel and Symfony for robust backend management, and optimized for SEO and performance, ranking among the top 5 Google results in its category."
+			},
+			"restaurateur": {
+				"desc": "Fully responsive corporate website for RESTAURATEUR EBENISTERIE BRONZES & PENDULE, crafted with WordPress, Elementor, PHP, and MySQL. Deployed via Docker and Nginx with SSL, SEO optimization, image compression, and GDPR-compliant contact forms for a secure and high-performing user experience."
+			},
+			"smoothScroll": {
+				"desc": "An open-source NPM package that adds smooth scrolling to React projects, enabling developers to create intuitive interfaces. Implemented with ReactJS and Typescript, with over 600 downloads on NPM."
+			},
+			"secureChat": {
+				"desc": "A privacy-focused messaging platform, inspired by Messenger, ensuring secure communication with end-to-end encryption. Built using ReactJS, NodeJS, Socket.IO."
+			},
+			"nop": {
+				"desc": "Website for a multi-sector cleaning and hygiene services provider in Aix-en-Provence. Features a modern design, intuitive navigation, and SEO-optimized structure for enhanced discoverability and client engagement."
+			},
+			"oummy": {
+				"desc": "Professional website for a certified real estate diagnostics company. Built with a clean, accessible interface that clearly presents all diagnostic services, booking details, and compliance information."
+			},
+			"toumis": {
+				"desc": "Premium, SEO-optimized event catering website specialized in fresh Mediterranean seafood and custom buffets for 10 to 1,000 guests. Features an interactive menu showcase, local search optimization for the Heilbronn region, and an intuitive quote generation funnel."
+			},
+			"servicesPlus": {
+				"desc": "Professional website for a building renovation and energy efficiency company. Expert in insulation, heat pumps, air conditioning, and joinery — custom solutions for individuals and professionals."
+			},
+			"pinheiro": {
+				"desc": "Responsive business website for a local plumbing and heating company in Sartrouville. Features clear service listings, quick contact access, and an optimized mobile-friendly design focused on local SEO visibility. (Note: Legacy HTTP-only deployment chosen by client)."
+			},
+			"doctorWho2048": {
+				"desc": "A creative spin on the classic 2048 game for Doctor Who fans, replacing numbers with the Doctor's incarnations. Built using ReactJS and TypeScript."
+			}
+		}
 	},
 	"contact": {
 		"title": "GET IN TOUCH",
@@ -106,15 +157,34 @@
 		"mobileDownloadSubtitle": "Download my resume or get in touch!"
 	},
 	"footer": {
-		"developedBy": "Developed by Hassen Ben Hadj Hassen",
-		"rights": "All rights reserved.",
-		"madeWith": "Made with",
-		"by": "by"
+		"description": "Full Stack Software Engineer specialized in React, Node.js, and modern SaaS development. Creating high-performance digital architectures.",
+		"servicesTitle": "Services",
+		"services": {
+			"speed": "Speed Optimization",
+			"chatbot": "AI Chatbots & RAG",
+			"saas": "SaaS Build"
+		},
+		"linksTitle": "Links",
+		"contactTitle": "Get In Touch",
+		"status": "Available for opportunities",
+		"rights": "All rights reserved. Copyright © {{year}} Hassen Ben Hadj Hassen"
 	},
 	"common": {
 		"loading": "Loading...",
 		"error": "Error",
 		"retry": "Retry",
 		"success": "Success!"
+	},
+	"testimonials": {
+		"title": "Client Testimonials",
+		"subtitle": "Feedback from real project owners and technical managers",
+		"cardiopro": {
+			"quote": "\"Hassen delivered an incredibly reliable defibrillator rental and sales platform for CardioPro. His expertise in PHP and backend logic, coupled with outstanding SEO optimization, got us to the top 5 rankings on Google. Highly recommend his development services!\"",
+			"role": "CEO, CardioPro"
+		},
+		"gpi": {
+			"quote": "\"Working with Hassen on the Global Police Indicators (GPI) geo-visualization portal was a game changer. The dynamic Leaflet maps load instantly and handle large geo-JSON datasets with sub-second response times. Professional, responsive, and technically top-tier.\"",
+			"role": "Project Technical Lead (Summit 2024)"
+		}
 	}
 }

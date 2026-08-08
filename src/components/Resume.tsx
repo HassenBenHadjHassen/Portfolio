@@ -6,45 +6,33 @@ import {
 	AiOutlineProject,
 	AiOutlineTrophy,
 } from "react-icons/ai";
-import { FaReact, FaNodeJs, FaJs, FaDatabase } from "react-icons/fa";
+import { FaReact, FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Particle from "./Particle";
-// import { useEffect, useState, lazy, Suspense } from "react";
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import SEO from "./SEO/SEO";
+import ExperienceTimeline from "./Resume/ExperienceTimeline";
 
 import pdfEn from "../assets/Hassen_Ben_Hadj_Hassen_Resume.pdf";
 import pdfFr from "../assets/Hassen_Ben_Hadj_Hassen_Resume_FR.pdf";
 
-const PdfComp = lazy(() => import("./PdfComp"));
-
-const workerUrl = `https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`;
-
 function Resume() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const navigate = useNavigate();
-	const [isMobile, setIsMobile] = useState(false);
-	const [selectedLang, setSelectedLang] = useState("en");
+	const [selectedLang, setSelectedLang] = useState(i18n.language.startsWith("fr") ? "fr" : "en");
 
 	useEffect(() => {
-		const checkMobile = () => {
-			setIsMobile(window.innerWidth <= 768);
-		};
-
-		checkMobile();
-		window.addEventListener("resize", checkMobile);
-
-		return () => window.removeEventListener("resize", checkMobile);
-	}, []);
+		setSelectedLang(i18n.language.startsWith("fr") ? "fr" : "en");
+	}, [i18n.language]);
 
 	const resumeStructuredData = {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
 		name: "Hassen Ben Hadj Hassen - Resume & CV",
 		description:
-			"Download the resume and CV of Hassen Ben Hadj Hassen, Full Stack Developer specializing in React, Node.js, TypeScript, and modern web development technologies.",
+			"Download and view the resume of Hassen Ben Hadj Hassen, Full Stack Developer specializing in React, Node.js, TypeScript, and modern web development technologies.",
 		url: "https://hassenbenhadjhassen.com/resume",
 		mainEntity: {
 			"@type": "Person",
@@ -56,35 +44,14 @@ function Resume() {
 	};
 
 	const navigateToContact = () => {
-		navigate("/");
-		// Wait for navigation to complete, then scroll
-		setTimeout(() => {
-			const contactSection = document.getElementById("contact");
-			if (contactSection) {
-				contactSection.scrollIntoView({
-					behavior: "smooth",
-					block: "start",
-				});
-			} else {
-				// Fallback: try again after a longer delay
-				setTimeout(() => {
-					const contactSection = document.getElementById("contact");
-					if (contactSection) {
-						contactSection.scrollIntoView({
-							behavior: "smooth",
-							block: "start",
-						});
-					}
-				}, 500);
-			}
-		}, 200);
+		navigate("/#contact");
 	};
 
 	return (
 		<div className="resume-page">
 			<SEO
 				title="Resume & CV - Hassen Ben Hadj Hassen | Full Stack Developer"
-				description="Download the resume and CV of Hassen Ben Hadj Hassen, Full Stack Developer specializing in React, Node.js, TypeScript, and modern web development technologies. View my professional experience and skills."
+				description="View and download the resume of Hassen Ben Hadj Hassen, Full Stack Developer specializing in React, Node.js, TypeScript, and modern web development technologies. View my professional experience and skills."
 				canonical="https://hassenbenhadjhassen.com/resume"
 				structuredData={resumeStructuredData}
 			/>
@@ -179,99 +146,123 @@ function Resume() {
 								</Row>
 							</Col>
 						</Row>
-
-						{/* Tech Stack Highlights */}
-						<Row className="justify-content-center mb-5">
-							<Col md={10}>
-								<motion.div
-									className="tech-highlights"
-									initial={{ opacity: 0, y: 30 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.8, delay: 1.1 }}
-								>
-									<h3 className="tech-highlights-title">
-										{t("resume.techStack.title")}
-									</h3>
-									<div className="tech-stack-grid">
-										<motion.div
-											className="tech-item"
-											whileHover={{ scale: 1.1, rotate: 5 }}
-											transition={{ duration: 0.2 }}
-										>
-											<FaReact className="tech-icon" />
-											<span>{t("resume.techStack.react")}</span>
-										</motion.div>
-										<motion.div
-											className="tech-item"
-											whileHover={{ scale: 1.1, rotate: -5 }}
-											transition={{ duration: 0.2 }}
-										>
-											<FaNodeJs className="tech-icon" />
-											<span>{t("resume.techStack.nodejs")}</span>
-										</motion.div>
-										<motion.div
-											className="tech-item"
-											whileHover={{ scale: 1.1, rotate: 5 }}
-											transition={{ duration: 0.2 }}
-										>
-											<FaJs className="tech-icon" />
-											<span>{t("resume.techStack.typescript")}</span>
-										</motion.div>
-										<motion.div
-											className="tech-item"
-											whileHover={{ scale: 1.1, rotate: -5 }}
-											transition={{ duration: 0.2 }}
-										>
-											<FaDatabase className="tech-icon" />
-											<span>{t("resume.techStack.mongodb")}</span>
-										</motion.div>
-									</div>
-								</motion.div>
-							</Col>
-						</Row>
 					</Container>
 				</motion.div>
 
-				{/* PDF Viewer Section */}
-				{!isMobile && (
-					<Row className="justify-content-center">
-						<Col md={12} className="text-center mb-4">
-							<Tabs
-								id="resume-tabs"
-								activeKey={selectedLang}
-								onSelect={(k) => setSelectedLang(k || "en")}
-								className="justify-content-center resume-tabs"
-								style={{ borderBottom: "none" }}
-							>
-								<Tab eventKey="en" title="English" />
-								<Tab eventKey="fr" title="Français" />
-							</Tabs>
-						</Col>
-						<motion.div
-							key={selectedLang}
-							className="pdf-container"
-							initial={{ opacity: 0, y: 50, scale: 0.9 }}
-							animate={{ opacity: 1, y: 0, scale: 1 }}
-							transition={{ duration: 0.8, delay: 1.2 }}
-							whileHover={{
-								scale: 1.02,
-								transition: { duration: 0.3 },
-							}}
+				{/* Tab Selection for CV Language */}
+				<Row className="justify-content-center mb-4">
+					<Col md={12} className="text-center">
+						<Tabs
+							id="resume-tabs"
+							activeKey={selectedLang}
+							onSelect={(k) => setSelectedLang(k || "en")}
+							className="justify-content-center resume-tabs mb-4"
+							style={{ borderBottom: "none" }}
 						>
-							<Suspense
-								fallback={
-									<div className="text-center p-5">Loading PDF Viewer...</div>
-								}
-							>
-								<PdfComp
-									pdfFile={selectedLang === "en" ? pdfEn : pdfFr}
-									isMobile={isMobile}
-									workerUrl={workerUrl}
-								/>
-							</Suspense>
-						</motion.div>
-					</Row>
-				)}
+							<Tab eventKey="en" title="English Resume" />
+							<Tab eventKey="fr" title="CV en Français" />
+						</Tabs>
+					</Col>
+				</Row>
+
+				{/* Experience & Education Timeline */}
+				<motion.div
+					key={`timeline-${selectedLang}`}
+					initial={{ opacity: 0, y: 40 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
+					style={{ marginBottom: "50px" }}
+				>
+					<ExperienceTimeline selectedLang={selectedLang} />
+				</motion.div>
+
+				{/* Supplementary CV Details */}
+				<Row className="justify-content-center mt-5">
+					<Col md={10}>
+						<Row className="g-4">
+							{/* Profile / Summary Card */}
+							<Col md={6}>
+								<motion.div
+									className="pdf-container"
+									style={{
+										padding: "25px 30px",
+										backgroundColor: "rgba(255, 255, 255, 0.03)",
+										border: "1px solid rgba(199, 112, 240, 0.15)",
+										borderRadius: "12px",
+										height: "100%",
+										color: "#f3f4f6",
+										textAlign: "left"
+									}}
+									whileHover={{ y: -5, transition: { duration: 0.2 } }}
+								>
+									<h3 className="purple" style={{ fontSize: "1.2rem", fontWeight: "600", marginBottom: "15px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "5px" }}>
+										{selectedLang === "en" ? "PROFESSIONAL SUMMARY" : "PROFIL"}
+									</h3>
+									<p style={{ fontSize: "0.95rem", lineHeight: "1.6", color: "rgba(255,255,255,0.8)" }}>
+										{selectedLang === "en" ? 
+											"Full-Stack Software Engineer with 3+ years of experience building and scaling production SaaS platforms serving 500+ daily active users. Specialized in React/Node.js ecosystems with proven cost optimization (€180+/user) and reliability improvements (90% → 99% uptime). Based in Saint-Étienne with expertise in modern DevOps practices and self-hosted solutions." :
+											"Développeur Full-Stack avec 3+ ans d’expérience dans la conception, le développement et la mise en production d’applications SaaS, e-commerce et santé. Spécialisé en React, Node.js, TypeScript et DevOps, avec un fort focus sur la performance, l’automatisation et la réduction des coûts."
+										}
+									</p>
+
+									<h3 className="purple" style={{ fontSize: "1.2rem", fontWeight: "600", marginTop: "25px", marginBottom: "15px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "5px" }}>
+										{selectedLang === "en" ? "KEY ACHIEVEMENTS" : "RÉALISATIONS CLÉS"}
+									</h3>
+									<ul style={{ fontSize: "0.9rem", paddingLeft: "20px", color: "rgba(255,255,255,0.8)", lineHeight: "1.6" }}>
+										<li className="mb-2">{selectedLang === "en" ? "Reduced infrastructure costs by €180+ per user per year by migrating enterprise email systems to a self-hosted iRedMail solution." : "Mis en place une solution mail iRedMail auto-hébergée, générant 180 $ d’économies / utilisateur / an."}</li>
+										<li className="mb-2">{selectedLang === "en" ? "Improved platform reliability from ~90% to 99% uptime, preventing revenue loss during peak traffic." : "Stabilisé l’hébergement et le DNS, atteignant 99 % de disponibilité (vs ~90 %)."}</li>
+										<li className="mb-2">{selectedLang === "en" ? "Published an open-source library 'smooth-scroll-react' (1,500+ weekly downloads)." : "Publié la librairie open-source React Smooth Scroll (1 500+ téléchargements hebdomadaires)."}</li>
+									</ul>
+								</motion.div>
+							</Col>
+
+							{/* Languages & Open Source Card */}
+							<Col md={6}>
+								<motion.div
+									className="pdf-container"
+									style={{
+										padding: "25px 30px",
+										backgroundColor: "rgba(255, 255, 255, 0.03)",
+										border: "1px solid rgba(199, 112, 240, 0.15)",
+										borderRadius: "12px",
+										height: "100%",
+										color: "#f3f4f6",
+										textAlign: "left"
+									}}
+									whileHover={{ y: -5, transition: { duration: 0.2 } }}
+								>
+									<h3 className="purple" style={{ fontSize: "1.2rem", fontWeight: "600", marginBottom: "15px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "5px" }}>
+										{selectedLang === "en" ? "LANGUAGES" : "LANGUES"}
+									</h3>
+									<ul style={{ listStyle: "none", padding: 0, fontSize: "0.95rem", color: "rgba(255,255,255,0.8)" }}>
+										<li className="mb-2">
+											<strong>{selectedLang === "en" ? "Arabic:" : "Arabe :"}</strong> {selectedLang === "en" ? "Native" : "Langue maternelle"}
+										</li>
+										<li className="mb-2">
+											<strong>{selectedLang === "en" ? "English:" : "Anglais :"}</strong> {selectedLang === "en" ? "Advanced / Professional" : "Courant / Avancé"}
+										</li>
+										<li className="mb-2">
+											<strong>{selectedLang === "en" ? "French:" : "Français :"}</strong> {selectedLang === "en" ? "Intermediate / Conversational" : "Intermédiaire"}
+										</li>
+									</ul>
+
+									<h3 className="purple" style={{ fontSize: "1.2rem", fontWeight: "600", marginTop: "25px", marginBottom: "15px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "5px" }}>
+										{selectedLang === "en" ? "OPEN SOURCE CONTRIBUTIONS" : "PROJETS OPEN SOURCE"}
+									</h3>
+									<p style={{ fontSize: "0.95rem", margin: 0, color: "rgba(255,255,255,0.8)" }}>
+										<strong>React Smooth Scroll</strong> &ndash; {selectedLang === "en" ? "NPM Package" : "Librairie React"}
+									</p>
+									<p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", margin: "4px 0 10px" }}>
+										{selectedLang === "en" ? "A lightweight utility to implement smooth section scrolling in React." : "Utilitaire léger pour implémenter des animations de défilement fluide."}
+									</p>
+									<a href="https://www.npmjs.com/package/smooth-scroll-react" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-accent)", textDecoration: "none", fontSize: "0.9rem" }}>
+										NPM Link <FaExternalLinkAlt size={12} />
+									</a>
+								</motion.div>
+							</Col>
+						</Row>
+					</Col>
+				</Row>
 
 				{/* Enhanced Download Section */}
 				<Row className="download-section mt-5">
@@ -282,32 +273,6 @@ function Resume() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 1.4 }}
 						>
-							{isMobile && (
-								<div className="mobile-download-hero">
-									<AiOutlineDownload className="hero-download-icon" />
-									<div className="hero-download-title">
-										{t("resume.mobileDownloadTitle", "Get My Resume")}
-									</div>
-									<div className="hero-download-subtitle">
-										{t(
-											"resume.mobileDownloadSubtitle",
-											"Download my resume or get in touch!"
-										)}
-									</div>
-									<div className="mt-4 mb-2">
-										<Tabs
-											id="resume-mobile-tabs"
-											activeKey={selectedLang}
-											onSelect={(k) => setSelectedLang(k || "en")}
-											className="justify-content-center resume-tabs"
-											style={{ borderBottom: "none" }}
-										>
-											<Tab eventKey="en" title="English" />
-											<Tab eventKey="fr" title="Français" />
-										</Tabs>
-									</div>
-								</div>
-							)}
 							<h3 className="download-title">
 								{t("resume.downloadSection.title")}
 							</h3>

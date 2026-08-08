@@ -3,7 +3,7 @@ import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 
-export function render(url: string) {
+export function prerender(url: string) {
 	const helmetContext = {};
 
 	function element() {

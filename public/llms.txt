@@ -1,0 +1,21 @@
+# Hassen Ben Hadj Hassen | Full Stack Developer
+
+> Professional developer portfolio showcasing full-stack capabilities, core skills, real-world client and personal projects, and contact avenues.
+
+## Key Information
+- **Role:** Full Stack Web Developer
+- **Location:** France (Open to local & worldwide remote opportunities)
+- **Primary Tech Stack:** React, Node.js, TypeScript, MongoDB, PHP, Laravel, WordPress
+- **Availability:** Ready for freelance contracts and full-time employment
+
+## Navigation & Pages
+- [Homepage](https://hassenbenhadjhassen.com/) - Main introduction, typewriter highlights, value propositions, and direct contact form.
+- [Projects](https://hassenbenhadjhassen.com/projects) - Portfolio of client websites (e.g., GPI, CardioPro) and open-source packages (e.g., smooth-scroll-react).
+- [About](https://hassenbenhadjhassen.com/about) - Personal bio, skill details, core backend/frontend frameworks, and GitHub contribution calendar.
+- [Resume](https://hassenbenhadjhassen.com/resume) - Professional journey, core stats, resume download options (EN & FR), and experience timeline.
+
+## Major Projects
+- [GPI (Police Global Indicators)](https://gpsi-staging.inrits.tech/) - High-performance Leaflet geospatial mapping and React data visualization platform built for Dubai Police 2024 World Summit.
+- [CardioPro](https://cardiopro.fr/) - Business platform for defibrillator renting and training in France. Custom PHP backend, ranks top 5 on Google.
+- [React Smooth Scroll (smooth-scroll-react)](https://www.npmjs.com/package/smooth-scroll-react) - Open-source NPM package with 600+ downloads adding customizable smooth scrolling to React applications.
+- [Packease.shop](http://packease.hassenbenhadjhassen.com/) - E-commerce travel luggage shop with React, Node.js, MongoDB, and Stripe checkout, attracting over 2,000 unique visitors.
